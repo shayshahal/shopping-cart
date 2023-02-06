@@ -6,6 +6,7 @@ import Nav from './components/navbar/Nav.jsx';
 import Details from './components/Details.jsx';
 import Complete from './components/Complete.jsx';
 import Shop from './components/shop/Shop.jsx';
+// Do lazy loading 
 
 export default function RouteSwitch() {
     return (

@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from '/src/styles/navbar/Nav.module.css'
 
 export default function Nav() {
     return (
-        <div className="Nav">
-        </div>
+        <nav className="Nav">
+            <Link to='/'>Home</Link>
+            <Link to='Shop'>Shop</Link>
+        </nav>
     )
 }
 
