@@ -8,9 +8,9 @@ import Complete from './components/Complete.jsx';
 import Shop from './components/shop/Shop.jsx';
 // Do lazy loading 
 
-export default function RouteSwitch() {
+export default function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter init>
             <Nav/>
             <Routes>
                 <Route path="/" element={<Home/>} />
