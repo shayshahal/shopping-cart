@@ -1,8 +1,6 @@
 import React from 'react';
-import { test,describe,expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Home from '../Home';
-
 
 describe('Home tests', ()=>{
     test('Home should render ', ()=>{
