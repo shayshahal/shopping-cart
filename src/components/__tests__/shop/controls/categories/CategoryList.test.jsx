@@ -26,7 +26,7 @@ describe('CategoryList component tests', () => {
 		expect(screen.getByRole('list')).toContainElement(
 			screen.getByRole('listitem')
 		);
-		expect(screen.getAllByRole('listitem').length).toBe(5);
+		expect(screen.getAllByRole('listitem').toHaveLength(5));
 		expect(screen.getByRole('list')).toMatchSnapshot();
 	});
 });

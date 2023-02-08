@@ -33,7 +33,7 @@ describe('ProductList Component tests', () => {
 		render(<ProductList sortedAndFilteredList={mockSortedAndFilteredProducts} />);
 
 		expect(screen.getByRole('listitem')).toBeInTheDocument();
-		expect(screen.getAllByRole('listitem').length).toBe(4);
-		expect(screen.getAllByRole('listitem')[3]).toContainElement(screen.getByText('300'));
+		expect(screen.getAllByRole('listitem').toHaveLength(4));
+		expect(screen.getAllByRole('listitem')[2]).toContainElement(screen.getByText('300'));
 	})
 });
