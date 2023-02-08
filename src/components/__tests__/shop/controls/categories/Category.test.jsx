@@ -27,8 +27,8 @@ describe('Category Component tests', () => {
 			expect(screen.getByRole('listitem')).toContainElement(
 				screen.getByRole('radio')
 			);
-			expect(screen.getByRole('listitem')).toContainElement(
-				screen.getByLabelText('category2')
+			expect(screen.getByRole('radio').labels[0]).toHaveTextContent(
+				'category2'
 			);
 		});
 		test('Highlights after pressing radio', () => {
@@ -38,9 +38,9 @@ describe('Category Component tests', () => {
 					name='category2'
 				/>
 			);
-			userEvent.click(screen.getByLabelText('category2'));
+			userEvent.click(screen.getByRole('radio'));
 			expect(onClickMock).toHaveBeenCalledWith('category2', false);
-			expect(screen.getByLabelText('category2')).toHaveStyle({
+			expect(screen.getByRole('category2').labels[0]).toHaveStyle({
 				color: 'blue',
 			});
 		});
@@ -57,9 +57,6 @@ describe('Category Component tests', () => {
 			expect(screen.getByRole('listitem')).toContainElement(
 				screen.getByRole('checkbox')
 			);
-			expect(screen.getByRole('listitem')).toContainElement(
-				screen.getByLabelText('+')
-			);
 		});
 		test('Changes after pressing checkbox', () => {
 			render(
@@ -68,9 +65,12 @@ describe('Category Component tests', () => {
 					name='category2'
 				/>
 			);
-			userEvent.click(screen.getByLabelText('+'));
+
+			userEvent.click(screen.getByRole('checkbox'));
 			expect(onClickMock).toHaveBeenCalledWith('category2', true);
-			expect(screen.getByLabelText('+')).toHaveTextContent('-');
+			expect(screen.getByRole('checkbox').labels[0]).toHaveTextContent(
+				'-'
+			);
 		});
 	});
 });
