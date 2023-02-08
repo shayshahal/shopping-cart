@@ -2,25 +2,25 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { vi } from 'vitest';
 
-import Categories from '../../../controls/categories/Categories';
+import CategoryList from '../../../controls/categories/categoryList';
 
-const categories = ['category1', 'category2', 'category3', 'category4'];
+const categoryList = ['category1', 'category2', 'category3', 'category4'];
 
-describe('Categories component tests', () => {
-	test('renders Categories successfully', () => {
+describe('CategoryList component tests', () => {
+	test('renders CategoryList successfully', () => {
 		render(
-			<Categories
+			<categoryList
 				onClick={vi.fn()}
-				categoryList={categories}
+				categoryList={categoryList}
 			/>
 		);
 		expect(screen.getByRole('list')).toBeInTheDocument();
 	});
-	test('renders Categories items successfully', () => {
+	test('renders categoryList items successfully', () => {
 		render(
-			<Categories
+			<categoryList
 				onClick={vi.fn()}
-				categoryList={categories}
+				categoryList={categoryList}
 			/>
 		);
 		expect(screen.getByRole('list')).toContainElement(
