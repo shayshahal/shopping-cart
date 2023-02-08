@@ -5,36 +5,35 @@ import ProductList from '../../shop/ProductList';
 
 const mockSortedAndFilteredProducts = [
 	{
-        id: 1,
         title: 'Product 1',
-        price: 100,
-        image: 'https://via.placeholder.com/150',
+        price: 100
     },
     {
-        id: 2,
         title: 'Product 2',
-        price: 200,
-        image: 'https://via.placeholder.com/150',
+        price: 200
     },
     {
-        id: 3,
         title: 'Product 3',
-        price: 300,
-        image: 'https://via.placeholder.com/150',
+        price: 300
     },
     {
-        id: 4,
         title: 'Product 4',
-        price: 400,
-        image: 'https://via.placeholder.com/150',
+        price: 400
     }
 ]
 
 describe('ProductList Component tests', () => {
 	test('render ProductList successfully', () => {
-		render(<ProductList />);
+		render(<ProductList sortedAndFilteredList={mockSortedAndFilteredProducts} />);
 
-		expect(screen.getByRole(list)).toBeInTheDocument();
+		expect(screen.getByRole('list')).toBeInTheDocument();
 	});
 	
+	test('render ProductList with products successfully', () => {
+		render(<ProductList sortedAndFilteredList={mockSortedAndFilteredProducts} />);
+
+		expect(screen.getByRole('listitem')).toBeInTheDocument();
+		expect(screen.getAllByRole('listitem').length).toBe(4);
+		expect(screen.getAllByRole('listitem')[3]).toContainElement(screen.getByText('300'));
+	})
 });
