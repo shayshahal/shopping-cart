@@ -1,41 +1,48 @@
-:root{
-  --dark-clr: hsl(0, 0%, 0%);
-  --light-clr: hsl(0, 100%, 100%);
-  --main-clr: hsl(50, 50%, 50%);
-  --bg-clr: var(--dark-clr);
-  --font-clr: var(--light-clr);
+:root {
+	--dark-clr: hsl(0, 0%, 0%);
+	--light-clr: hsl(0, 100%, 100%);
+	--main-clr: hsl(50, 50%, 50%);
+	--bg-clr: var(--dark-clr);
+	--font-clr: var(--light-clr);
 }
-.lightMode{
-  --bg-clr: var(--light-clr);
-  --font-clr: var(--dark-clr);
+.lightMode {
+	--bg-clr: var(--light-clr);
+	--font-clr: var(--dark-clr);
 }
 
-*, *::before, *::after{
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
-*{
-  margin: 0;
-  padding: 0;
-  font: inherit;
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
-input, textarea, button, select{
-  font: inherit
+input,
+textarea,
+button,
+select {
+	font: inherit;
 }
-img, svg{
-  max-width: 100%;
-  display: block;
+img,
+svg {
+	max-width: 100%;
+	display: block;
 }
 /* Set core body defaults */
 body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  background-color: var(--bg-clr);
-  font: var(--font-clr);
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	background-color: var(--bg-clr);
+	font: var(--font-clr);
 }
-html, body {
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
 ul[role='list'],
 ol[role='list'] {
-  list-style: none;
+	list-style: none;
 }

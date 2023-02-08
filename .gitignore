@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+shopping cart idea.txt
 
 # Editor directories and files
 .vscode/*

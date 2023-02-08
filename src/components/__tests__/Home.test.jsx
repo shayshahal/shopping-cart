@@ -1,27 +1,21 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 import Home from '../Home';
-
-describe('Home tests', ()=>{
-    test('Home should render ', ()=>{
-        render(<Home/>)
-
-        expect(screen.getByRole('main')).toBeInTheDocument();
-    })
-    test('should render an h1', ()=>{
-        render(<Home/>)
-
-        expect(screen.getByRole("heading")).toBeInTheDocument();
-    })
-    test('should render a paragraph', ()=>{
-        render(<Home/>)
-
-        expect(screen.getByTestId("paragraph")).toBeInTheDocument();
-    })
-    test('should render a button', ()=>{
-        render(<Home/>)
-
-        expect(screen.getByRole("button")).toBeInTheDocument();
-    })
-})
-
+describe('Home tests', () => {
+	test('Home should render ', () => {
+		render(<Home />);
+		expect(screen.getByRole('main')).toBeInTheDocument();
+	});
+	test('should render an h1', () => {
+		render(<Home />);
+		expect(screen.getByRole('heading')).toBeInTheDocument();
+	});
+	test('should render a paragraph', () => {
+		render(<Home />);
+		expect(screen.getByTestId('paragraph')).toBeInTheDocument();
+	});
+	test('should render a button', () => {
+		render(<Home />);
+		expect(screen.getByRole('button')).toBeInTheDocument();
+	});
+});
