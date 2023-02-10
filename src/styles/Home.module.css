@@ -1,0 +1,59 @@
+.home {
+	height: 100%;
+	display: grid;
+	padding-inline: 2em;
+	grid-template-areas:
+		'a a'
+		'b b'
+		'c d';
+	justify-content: start;
+	align-content: center;
+	align-items: center;
+}
+.welcome {
+	font-size: 4rem;
+	animation: slideIn 1s cubic-bezier(0, 1, 0, 1);
+	grid-area: a;
+}
+.siteName {
+	font-size: 15rem;
+	animation: slideIn 1s cubic-bezier(0, 0, 0, 1.1);
+	grid-area: b;
+}
+.credit {
+	font-size: 3rem;
+	animation: slideIn 1s cubic-bezier(0, 1, 0, 1);
+	grid-area: c;
+}
+.shopLink {
+	display: inline-block;
+	font-size: 2rem;
+	padding: 0.25em 1em;
+	margin-left: 1em;
+	background-color: var(--main-clr);
+	color: var(--bg-clr);
+	border-radius: 3rem;
+	transition: transform 0.2s ease;
+	grid-area: d;
+	animation: slideInLink 1s cubic-bezier(0, 1, 0, 1);
+}
+.shopLink:hover {
+	color: var(--font-clr);
+	transform: scale(1.1);
+}
+@keyframes slideIn {
+	from {
+		transform: translateX(-500%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+@keyframes slideInLink {
+	from {
+		transform: translateX(500%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
