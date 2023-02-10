@@ -6,51 +6,58 @@ import SortList from './controls/sorts/SortList';
 import ProductList from './ProductList';
 
 export default function Shop(props) {
-	const [isDescending, setIsDescending] = useState(true);
-	const sortedAndFilteredList = useState(
-		priceSort(props.productList, isDescending)
+	const [sortedAndFilteredList, setSortedAndFilteredList] = useState(
+		props.productList
 	);
-	function priceSort(products) {
-		return products.sort((a, b) => {
-			if (isDescending) {
-				return b.price - a.price;
-			} else {
-				return a.price - b.price;
-			}
+	const [activeSortFunction, setActiveSortFunction] = useState(null);
+	const [activeCategoryList, setActiveCategoryList] = useState(new Set());
+	const [activeFilterMap, setActiveFilterMap] = useState(new Map());
+
+	function filterChange(filterName, filterFunction) {
+		setActiveFilterMap((map) => {
+			map.set(filterName, filterFunction);
+			return map;
 		});
+	}
+	function categoryChange(categoryName, isAdd) {
+		if (isAdd) {
+			setActiveCategoryList((set) => {
+				set.add(categoryName);
+				return set;
+			});
+		} else {
+			setActiveCategoryList((set) => {
+				set.delete(categoryName);
+				return set;
+			});
+		}
 	}
 
-	function alphabeticalSort(products) {
-		return products.sort((a, b) => {
-			if (isDescending) {
-				return a.name.localeCompare(b.name);
-			} else {
-				return b.name.localeCompare(a.name);
-			}
-		});
-	}
+	useEffect(() => {
+		for ([filterName, filterFunction] of activeFilterMap) {
+			props.productList.filter(
+				(product) =>
+					filterFunction(product[filterName]) &&
+					activeCategoryList.has(product.category)
+			);
+		}
+		setSortedAndFilteredList(activeSortFunction(props.productList));
+		return () => {};
+	}, [activeCategoryList, activeFilterMap, activeSortFunction]);
 
-	function stockAmountSort(products) {
-		return products.sort((a, b) => {
-			if (isDescending) {
-				return b.stock - a.stock;
-			} else {
-				return a.stock - b.stock;
-			}
-		});
-	}
 	return (
 		<main className={styles.home}>
-			<CategoryList />
-			<FilterList />
-			<SortList
-				sortsFunctionsList={[
-					priceSort,
-					alphabeticalSort,
-					stockAmountSort,
-				]}
+			<CategoryList
+				onChange={categoryChange}
 			/>
-			<ProductList />
+			<FilterList onChange={filterChange}/>
+			<SortList
+				onChange={setActiveSortFunction}
+			/>
+			<ProductList
+				sortedAndFilteredList={sortedAndFilteredList}
+				addProduct={props.addProduct}
+			/>
 		</main>
 	);
 }
