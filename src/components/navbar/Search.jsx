@@ -1,17 +1,28 @@
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from '/src/styles/navbar/Search.module.css';
 
 export default function Search() {
+	const navigate = useNavigate();
+	const [searchParams, setSearchParams] = useSearchParams();
+	function handleSearch(e) {
+		setSearchParams(e.target.value);
+	}
 	return (
 		<div
-			className='Search'
+			className={styles.divContainer}
 			data-testid='search-container'
 		>
 			<label htmlFor='search' />
 			<input
+				placeholder='Search here...'
 				type='search'
 				name='search'
 				id='search'
-				onChange={null}
+				onChange={handleSearch}
+				onFocus={() => {
+					navigate('/Shop');
+				}}
+				autoComplete='off'
 			/>
 		</div>
 	);

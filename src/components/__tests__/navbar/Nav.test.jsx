@@ -37,11 +37,5 @@ describe('Nav tests', () => {
 				);
 			});
 		});
-		describe('Search component tests', () => {
-			test.todo('Render Search component successfully', () => {});
-		});
-		describe('Cart component tests', () => {
-			test.todo('Render Cart component successfully', () => {});
-		});
 	});
 });

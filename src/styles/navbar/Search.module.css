@@ -1,0 +1,14 @@
+input[type=search]{
+    width: 50%;
+    height: 100%;
+    border: none;
+    border-bottom: .1rem solid currentColor;
+    font-size: 2rem;
+    padding-inline: .5em;
+    appearance: none;
+    outline: none;
+    transition: width .2s ease;
+}
+input[type=search]:focus{
+    width: 100%;
+}
