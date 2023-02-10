@@ -1,8 +1,8 @@
-import styles from '/src/styles/shop/controls/Categories.module.css'
+import styles from '/src/styles/shop/controls/CategoryList.module.css'
 
-export default function Categories() {
+export default function CategoryList() {
     return (
-        <div className="Categories">
+        <div className="CategoryList">
         </div>
     )
 }
