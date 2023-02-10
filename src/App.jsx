@@ -25,7 +25,34 @@ export default function App() {
 				/>
 				<Route
 					path='/Shop'
-					element={<Shop addProduct={addItemToCart} />}
+					element={
+						<Shop
+							productList={[
+								{
+									id: 1,
+									name: 'Bread',
+									price: 10,
+									stock: 1,
+									categories: [1, 3]
+								},
+								{
+									id: 2,
+									name: 'Butter',
+									price: 10,
+									stock: 1,
+									categories: [1, 2]
+								},
+								{
+									id: 3,
+									name: 'Cheese',
+									price: 10,
+									stock: 1,
+									categories: [3]
+								},
+							]}
+							addProduct={addItemToCart}
+						/>
+					}
 				/>
 				<Route
 					path='/Shop:name'
