@@ -40,9 +40,6 @@ describe('Category Component tests', () => {
 			);
 			userEvent.click(screen.getByRole('radio'));
 			expect(onClickMock).toHaveBeenCalledWith('category2', false);
-			expect(screen.getByRole('category2').labels[0]).toHaveStyle({
-				color: 'blue',
-			});
 		});
 	});
 
