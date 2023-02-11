@@ -1,0 +1,13 @@
+.SortDirection{
+    grid-area: dir;
+    cursor: pointer;
+    border: .1rem solid currentColor;
+    border-radius: .5rem;
+    padding: .25em;
+}
+.label{
+    cursor: pointer;
+}
+.checkbox{
+    appearance: none;
+}

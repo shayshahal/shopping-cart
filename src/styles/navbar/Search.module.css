@@ -1,14 +1,15 @@
-input[type=search]{
-    width: 50%;
-    height: 100%;
-    border: none;
-    border-bottom: .1rem solid currentColor;
-    font-size: 2rem;
-    padding-inline: .5em;
-    appearance: none;
-    outline: none;
-    transition: width .2s ease;
+input[type='search'] {
+	width: 50%;
+	height: 100%;
+	border: none;
+	font-size: 2rem;
+	padding-inline: 0.5em;
+	appearance: none;
+	outline: none;
+	transition: all 0.2s ease;
 }
-input[type=search]:focus{
-    width: 100%;
+input[type='search']:focus {
+	width: 100%;
+	background-color: var(--bg-clr);
+	color: var(--font-clr);
 }

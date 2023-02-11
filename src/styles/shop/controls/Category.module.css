@@ -1,0 +1,32 @@
+.category {
+	font-size: 1rem;
+	border-radius: 1rem;
+	padding: 0 0.5rem;
+	border: .1rem solid currentColor;
+	transition: background-color .2s ease;
+}
+.category:has(.categoryRadio:checked){
+	background-color: var(--main-clr);
+}
+.category::marker{
+    color: var(--font-clr);
+    content: "- ";
+}
+.categoryCBLabel {
+	font-size: .75rem;
+    font-weight: 900;
+	margin-left: 0.5rem;
+    padding: 0em .5em;
+	border-radius: 0.25rem;
+    cursor: pointer;
+}
+.categoryRadioLabel{
+    cursor: pointer;
+}
+.categoryRadio,
+.categoryCB {
+	appearance: none;
+}
+input[type='radio']:checked + label {
+	color: red;
+}

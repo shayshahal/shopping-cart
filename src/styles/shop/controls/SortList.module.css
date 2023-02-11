@@ -1,0 +1,11 @@
+.SortList {
+	grid-area: sort;
+	display: grid;
+	grid-template-areas:
+		'dir dir dir'
+		'sort sort sort';
+	align-items: center;
+    justify-content: start;
+    justify-items: start;
+    gap: 0em 1em;
+}

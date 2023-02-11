@@ -1,19 +1,21 @@
-nav{
+nav {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
 	justify-items: stretch;
 	align-items: stretch;
 	font-size: 1.5rem;
+	background-color: var(--font-clr);
 }
-.NavLink{
-	transition: all .2s;
-	padding-block: .5em;
+.NavLink {
+	transition: all 0.2s;
+	padding-block: 0.5em;
 	text-align: center;
+	color: var(--bg-clr);
 }
 
 @media (max-width: 700px) {
-	nav{
+	nav {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
