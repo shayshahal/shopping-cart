@@ -1,11 +1,5 @@
 .shop {
 	display: grid;
-	grid-template-areas:
-		'sort list list list list list list list list list list list list list list list list list list list list list list '
-		'category list list list list list list list list list list list list list list list list list list list list list list '
-		'category list list list list list list list list list list list list list list list list list list list list list list'
-		'category list list list list list list list list list list list list list list list list list list list list list list '
-		'category list list list list list list list list list list list list list list list list list list list list list list'
-		'filter list list list list list list list list list list list list list list list list list list list list list list ';
+	grid-template-columns: auto 1fr;
 	padding: 1em;
 }
