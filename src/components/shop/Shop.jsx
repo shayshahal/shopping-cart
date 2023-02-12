@@ -45,9 +45,9 @@ export default function Shop(props) {
 		});
 	}
 	function filterChange(filterName, filterFunction) {
-		setActiveFilterMap((map) => {
-			map.set(filterName, filterFunction);
-			return map;
+		setActiveFilterMap((prev) => {
+			prev.set(filterName, filterFunction);
+			return prev;
 		});
 	}
 	function categoryChange(categoryName, isAdd) {
@@ -65,7 +65,7 @@ export default function Shop(props) {
 	}
 
 	useEffect(() => {
-		for ([filterName, filterFunction] of activeFilterMap) {
+		for (const [filterName, filterFunction] of activeFilterMap) {
 			setSortedAndFilteredList((list) =>
 				list.filter(
 					(product) =>
