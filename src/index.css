@@ -4,7 +4,6 @@
 	--main-clr: hsl(36, 100%, 26%);
 	--bg-clr: var(--light-clr);
 	--font-clr: var(--dark-clr);
-	overflow: hidden;
 }
 .darkMode {
 	--bg-clr: var(--dark-clr);

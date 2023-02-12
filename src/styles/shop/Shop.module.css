@@ -1,11 +1,11 @@
 .shop {
 	display: grid;
 	grid-template-areas:
-		'sort list list list list list list list list list list list list list list list list'
-		'categories list list list list list list list list list list list list list list list list'
-		'categories list list list list list list list list list list list list list list list list'
-		'filter list list list list list list list list list list list list list list list list'
-		'filter list list list list list list list list list list list list list list list list'
-		'filter list list list list list list list list list list list list list list list list';
+		'sort list list list list list list list list list list list list list list list list list list list list list list '
+		'category list list list list list list list list list list list list list list list list list list list list list list '
+		'category list list list list list list list list list list list list list list list list list list list list list list'
+		'category list list list list list list list list list list list list list list list list list list list list list list '
+		'category list list list list list list list list list list list list list list list list list list list list list list'
+		'filter list list list list list list list list list list list list list list list list list list list list list list ';
 	padding: 1em;
 }
