@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
@@ -10,10 +10,25 @@ import Shop from './components/shop/Shop.jsx';
 
 export default function App() {
 	const [cartItems, setCartItems] = useState([]);
-
+	const [productsList, setProductsList] = useState([]);
 	function addItemToCart(item) {
 		setCartItems((prev) => [...prev, item]);
 	}
+	useEffect(() => {
+		const controller = new AbortController();
+		async function fetchProducts() {
+			let response = await fetch(
+				'https://dummyjson.com/products?limit=100&skip=0',
+				{ signal: controller.signal }
+			);
+			let data = await response.json();
+			setProductsList(data.products);
+		}
+		fetchProducts().catch(() => console.log('canceled fetch!'));
+		return () => {
+			controller.abort();
+		};
+	}, []);
 
 	return (
 		<BrowserRouter init>
@@ -27,29 +42,7 @@ export default function App() {
 					path='/Shop'
 					element={
 						<Shop
-							productList={[
-								{
-									id: 1,
-									name: 'Bread',
-									price: 10,
-									stock: 1,
-									categories: [1, 3]
-								},
-								{
-									id: 2,
-									name: 'Butter',
-									price: 10,
-									stock: 1,
-									categories: [1, 2]
-								},
-								{
-									id: 3,
-									name: 'Cheese',
-									price: 10,
-									stock: 1,
-									categories: [3]
-								},
-							]}
+							productList={productsList}
 							addProduct={addItemToCart}
 						/>
 					}

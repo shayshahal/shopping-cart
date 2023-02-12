@@ -1,18 +1,18 @@
 import styles from '/src/styles/shop/controls/CategoryList.module.css';
 import Category from './Category';
+import { useState, useEffect } from 'react';
 
 export default function CategoryList(props) {
-	const categories = [
-		'category1',
-		'category2',
-		'category3',
-		'category4',
-		'category5',
-		'category6',
-		'category7',
-		'category8',
-	];
+	const [categoryList, setCategoryList] = useState([]);
+	useEffect(()=>{
+		async function fetchCategories() {
+			let response = await fetch('https://dummyjson.com/products/categories');
+			let data = await response.json();
+			return data;
+		}
+		fetchCategories().then(data=>{setCategoryList(data)})
+	}, [])
 	return <ul className={styles.categoryList}>
-        {categories.map((category, i)=> <Category key={i} name={category} onClick={props.onAction}/>)}
+        {categoryList.map((category, i)=> <Category key={i} name={category} onClick={props.onAction}/>)}
     </ul>;
 }
