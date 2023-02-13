@@ -1,0 +1,25 @@
+.Product{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-auto-flow: row;
+    align-items: center;
+    border: .2rem solid currentColor;
+    padding: .5em;
+    width: 40vw;
+}
+.image{
+    aspect-ratio: 1/1;
+    grid-column: 1/4;
+}
+.name{
+    font-size: 1.5rem;
+    text-align: start;
+}
+.price{
+    text-align: end;
+}
+.rating{
+    text-align: end;
+}

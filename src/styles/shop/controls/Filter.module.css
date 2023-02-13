@@ -1,6 +1,8 @@
 .Filter {
-	margin-block: 1em;
+	margin-block: .5em;
 }
 .input {
+	margin: .5em;
 	width: 5rem;
+	display: inline-block;
 }

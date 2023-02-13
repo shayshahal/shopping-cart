@@ -43,10 +43,8 @@ svg {
 	display: block;
 }
 html,
-body,
-#root {
+body {
 	height: 100%;
-	width: 100%;
 }
 /* Set core body defaults */
 body {
@@ -70,6 +68,7 @@ a {
 	/* Page layout */
 	display: grid;
 	grid-template-rows: auto 1fr;
+	max-height: 100%;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

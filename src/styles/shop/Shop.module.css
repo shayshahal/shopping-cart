@@ -1,5 +1,8 @@
-.shop {
+.Shop {
 	display: grid;
-	grid-template-columns: auto 1fr;
-	padding: 1em;
+	grid-template-rows: auto 1fr;
+}
+.controls{
+	display: flex;
+
 }

@@ -1,12 +1,12 @@
 .category {
 	width: fit-content;
-	margin-block: 1em;
+	height: fit-content;
 	border-radius: 1rem;
-	padding: 0 0.5rem;
+	padding: 0 .5em;
 	border: .1rem solid currentColor;
 	transition: background-color .2s ease;
 }
-.category:has(.categoryRadio:checked){
+.category:has(.categoryRadio:checked) {
 	background-color: var(--main-clr);
 }
 .category::marker{

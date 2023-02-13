@@ -1,0 +1,9 @@
+.ProductList {
+    list-style: none;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 1em;
+
+}

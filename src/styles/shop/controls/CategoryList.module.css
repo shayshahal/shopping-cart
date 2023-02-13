@@ -1,6 +1,8 @@
 .categoryList {
-	grid-area: category;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
 	padding: 1em;
+    flex: 8;
 }
