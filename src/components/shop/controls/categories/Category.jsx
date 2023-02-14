@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../../../../styles/shop/controls/Category.module.css';
+import styles from '../../../../styles/shop/controls/categories/Category.module.css';
 
 export default function Category(props) {
 	const [label, setLabel] = useState('+');
@@ -36,6 +36,7 @@ export default function Category(props) {
 				name='radioCategory'
 				id={props.name}
 				onChange={handleClick}
+				checked={props.isChecked}
 			/>
 		</li>
 	);
