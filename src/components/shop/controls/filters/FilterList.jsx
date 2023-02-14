@@ -5,7 +5,7 @@ export default function FilterList(props) {
 	return <div className={styles.FilterList}>
 		{
 			Object.entries(props.filters).map(([key, value]) => {
-				return <Filter key={key} name={key} onChange={props.onChange} min={value.min} max={value.max}/>
+				return <Filter key={key} name={key} onChange={props.onFilterChange} min={value.min} max={value.max}/>
 			})
 		}
 	</div>;
