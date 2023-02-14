@@ -1,8 +1,22 @@
 .categoryList {
+    position: relative;
+    list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1em;
 	padding: 1em;
     flex: 8;
+}
+.button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+    font-size: 1rem;
+    font-weight: bolder;
+    align-content: center;
+    color: var(--main-clr);
+    cursor: pointer;
 }
