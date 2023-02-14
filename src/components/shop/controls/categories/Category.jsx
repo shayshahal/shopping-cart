@@ -1,43 +1,36 @@
-import { useState } from 'react';
 import styles from '../../../../styles/shop/controls/categories/Category.module.css';
 
 export default function Category(props) {
-	const [label, setLabel] = useState('+');
-	function handleClick(e) {
-		props.onClick(e.target.value, true);
-	}
 	function handleChange(e) {
-		props.onClick(e.target.value, e.target.checked);
-		setLabel(e.target.checked ? '-' : '+');
+		if (e.target.checked) {
+			props.onClick((prev) => {
+				let set = new Set(prev);
+				set.add(props.name);
+				return set;
+			});
+		} else {
+			props.onClick((prev) => {
+				let set = new Set(prev);
+				set.delete(props.name);
+				return set;
+			});
+		}
 	}
 	return (
 		<li className={styles.category}>
-			<label
-				htmlFor={props.name}
-				className={styles.categoryRadioLabel}
-			>
-				{props.name}
-				<input
-					className={styles.categoryCB}
-					type='checkbox'
-					id={props.name + 'cb'}
-					onClick={handleChange}
-				/>
-				<label
-					htmlFor={props.name + 'cb'}
-					className={styles.categoryCBLabel}
-				>
-					{label}
-				</label>
-			</label>
 			<input
-				className={styles.categoryRadio}
-				type='radio'
-				name='radioCategory'
+				className={styles.category}
+				type='checkbox'
 				id={props.name}
-				onChange={handleClick}
+				onClick={handleChange}
 				checked={props.isChecked}
 			/>
+			<label
+				htmlFor={props.name}
+				className={styles.categoryLabel}
+			>
+				{props.name}
+			</label>
 		</li>
 	);
 }

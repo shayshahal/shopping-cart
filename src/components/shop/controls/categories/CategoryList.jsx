@@ -16,14 +16,23 @@ export default function CategoryList(props) {
 			setCategoryList(data);
 		});
 	}, []);
+	function handleClick() {
+		props.onCategoryClick(new Set());
+	}
 	return (
 		<ul className={styles.categoryList}>
+			<button
+				className={styles.button}
+				onClick={handleClick}
+			>
+				reset
+			</button>
 			{categoryList.map((category, i) => (
 				<Category
 					key={i}
 					name={category}
-					onClick={props.onAction}
-					isChecked={props.activeCategories === category}
+					onClick={props.onCategoryClick}
+					isChecked={props.activeCategories.has(category)}
 				/>
 			))}
 		</ul>

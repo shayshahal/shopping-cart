@@ -14,21 +14,21 @@ export default function Shop(props) {
 		rating: { min: 0, max: 5 },
 	});
 	const sortFunctions = {
-		price: function priceSort(a, b) {
+		price: (a, b) => {
 			if (isDescending) {
 				return b.price - a.price;
 			} else {
 				return a.price - b.price;
 			}
 		},
-		alphabet: function alphabeticalSort(a, b) {
+		alphabet: (a, b) => {
 			if (isDescending) {
 				return a.title.localeCompare(b.title);
 			} else {
 				return b.title.localeCompare(a.title);
 			}
 		},
-		rating: function ratingSort(a, b) {
+		rating: (a, b) => {
 			if (isDescending) {
 				return b.rating - a.rating;
 			} else {
@@ -38,32 +38,15 @@ export default function Shop(props) {
 	};
 	const sortedAndFilteredList = props.productList
 		.sort((a, b) => sortFunctions[activeSort](a, b))
-		.filter((product) => {
-			return (
-				filterProduct(product) &&
-				((activeCategories.has(product.category) &&
-					activeCategories.size !== 0) ||
-					activeCategories.size === 0)
-			);
-		});
-	function categoryChange(categoryName, isAdd) {
-		if (isAdd) {
-			setActiveCategories((set) => {
-				set.add(categoryName);
-				return set;
-			});
-		} else {
-			setActiveCategories((set) => {
-				set.delete(categoryName);
-				return set;
-			});
-		}
-	}
-
+		.filter((product) => filterProduct(product));
 	function filterProduct(product) {
-		for (const [k, v] of Object.entries(filters)) {
+		if (
+			!activeCategories.has(product.category) &&
+			activeCategories.size !== 0
+		)
+			return false;
+		for (const [k, v] of Object.entries(filters))
 			if (product[k] < v.min || product[k] > v.max) return false;
-		}
 		return true;
 	}
 
@@ -78,11 +61,11 @@ export default function Shop(props) {
 					onDirectionChange={setIsDescending}
 				/>
 				<CategoryList
-					onAction={categoryChange}
+					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}
 				/>
 				<FilterList
-					onChange={setFilters}
+					onFilterChange={setFilters}
 					filters={filters}
 				/>
 			</div>
