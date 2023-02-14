@@ -1,6 +1,9 @@
-import styles from '/src/styles/shop/controls/SortDirection.module.css';
+import styles from '/src/styles/shop/controls/sorts/SortDirection.module.css';
 
 export default function SortDirection(props) {
+	function handleChange() {
+		props.onChange(prev=> !prev);
+	}
 	return (
 		<div className={styles.SortDirection}>
 			<label htmlFor='dirCB' className={styles.label}>
@@ -9,8 +12,9 @@ export default function SortDirection(props) {
 			<input
 				type='checkbox'
 				id='dirCB'
-				onChange={props.onChange}
+				onChange={handleChange}
 				className={styles.checkbox}
+				checked={props.isDescending}
 			/>
 		</div>
 	);
