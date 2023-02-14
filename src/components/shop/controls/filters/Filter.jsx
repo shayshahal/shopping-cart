@@ -1,21 +1,35 @@
-import styles from '/src/styles/shop/controls/Filter.module.css'
-import {useEffect, useState} from 'react'
+import styles from '/src/styles/shop/controls/filters/Filter.module.css';
 
 export default function Filter(props) {
-    const [floor, setFloor] = useState('');
-	const [ceiling, setCeiling] = useState('');
-    function filterCheck(num){
-        return num >= floor && num <= ceiling;
-    }
-    useEffect(()=>{
-        props.onChange(props.name, filterCheck);
-    }, [floor, ceiling])
-    return (
-        <div className={styles.Filter}>
-            <label>{props.name}: </label>
-            <input className={styles.input} value={floor} type="number" onChange={e=>{setFloor(e.target.value)}} min={0}/>
-            {' - '}
-            <input className={styles.input} value={ceiling} type="number" onChange={e=>{setCeiling(e.target.value)}} min={0}/>
-        </div>
-    )
+	function handleChange(e) {
+		props.onChange((prev) => ({
+			...prev,
+			[props.name]: {
+				...prev[props.name],
+				[e.target.name]: e.target.value,
+			},
+		}));
+	}
+	return (
+		<div className={styles.Filter}>
+			<label>{props.name}: </label>
+			<input
+				className={styles.input}
+				type='number'
+				name='min'
+				onChange={handleChange}
+				value={props.min}
+				step={0.01}
+			/>
+			-
+			<input
+				className={styles.input}
+				type='number'
+				name='max'
+				onChange={handleChange}
+				value={props.max}
+				step={0.01}
+			/>
+		</div>
+	);
 }
