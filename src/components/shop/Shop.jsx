@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from '../../styles/shop/Shop.module.css';
 import CategoryList from './controls/categories/CategoryList';
 import FilterList from './controls/filters/FilterList';
@@ -7,89 +7,86 @@ import ProductList from './ProductList';
 
 export default function Shop(props) {
 	const [isDescending, setIsDescending] = useState(true);
-	const [sortedAndFilteredList, setSortedAndFilteredList] = useState(
-		props.productList
-	);
-	const [activeSortFunction, setActiveSortFunction] = useState(
-		() => priceSort
-	);
-	const [activeCategoryList, setActiveCategoryList] = useState(new Set());
-	const [activeFilterMap, setActiveFilterMap] = useState(new Map());
-	function priceSort(productList) {
-		return productList.sort((a, b) => {
+	const [activeSort, setActiveSort] = useState('price');
+	const [activeCategories, setActiveCategories] = useState(new Set());
+	const [filters, setFilters] = useState({
+		price: { min: 0, max: 100000 },
+		rating: { min: 0, max: 5 },
+	});
+	const sortFunctions = {
+		price: function priceSort(a, b) {
 			if (isDescending) {
 				return b.price - a.price;
 			} else {
 				return a.price - b.price;
 			}
-		});
-	}
-
-	function alphabeticalSort(productList) {
-		return productList.sort((a, b) => {
+		},
+		alphabet: function alphabeticalSort(a, b) {
 			if (isDescending) {
-				return a.name.localeCompare(b.name);
+				return a.title.localeCompare(b.title);
 			} else {
-				return b.name.localeCompare(a.name);
+				return b.title.localeCompare(a.title);
 			}
-		});
-	}
-
-	function stockAmountSort(productList) {
-		return productList.sort((a, b) => {
+		},
+		rating: function ratingSort(a, b) {
 			if (isDescending) {
-				return b.stock - a.stock;
+				return b.rating - a.rating;
 			} else {
-				return a.stock - b.stock;
+				return a.rating - b.rating;
 			}
+		},
+	};
+	const sortedAndFilteredList = props.productList
+		.sort((a, b) => sortFunctions[activeSort](a, b))
+		.filter((product) => {
+			return (
+				filterProduct(product) &&
+				((activeCategories.has(product.category) &&
+					activeCategories.size !== 0) ||
+					activeCategories.size === 0)
+			);
 		});
-	}
-	function filterChange(filterName, filterFunction) {
-		setActiveFilterMap((prev) => {
-			prev.set(filterName, filterFunction);
-			return prev;
-		});
-	}
 	function categoryChange(categoryName, isAdd) {
 		if (isAdd) {
-			setActiveCategoryList((set) => {
+			setActiveCategories((set) => {
 				set.add(categoryName);
 				return set;
 			});
 		} else {
-			setActiveCategoryList((set) => {
+			setActiveCategories((set) => {
 				set.delete(categoryName);
 				return set;
 			});
 		}
 	}
 
-	useEffect(() => {
-		for (const [filterName, filterFunction] of activeFilterMap) {
-			setSortedAndFilteredList((list) =>
-				list.filter(
-					(product) =>
-						filterFunction(product[filterName]) &&
-						activeCategoryList.has(product.category)
-				)
-			);
+	function filterProduct(product) {
+		for (const [k, v] of Object.entries(filters)) {
+			if (product[k] < v.min || product[k] > v.max) return false;
 		}
-		setSortedAndFilteredList(activeSortFunction(sortedAndFilteredList));
-		return () => {};
-	}, [activeCategoryList, activeFilterMap, activeSortFunction]);
+		return true;
+	}
 
 	return (
-		<main className={styles.shop}>
-			<CategoryList onAction={categoryChange} />
-			<FilterList onChange={filterChange} />
-			<SortList
-				sortFunctions={[priceSort, alphabeticalSort, stockAmountSort]}
-				onSortChange={setActiveSortFunction}
-				isDescending={isDescending}
-				onDirectionChange={() => {
-					setIsDescending((prev) => !prev);
-				}}
-			/>
+		<main className={styles.Shop}>
+			<div className={styles.controls}>
+				<SortList
+					sortFunctions={sortFunctions}
+					checked={activeSort}
+					onSortChange={setActiveSort}
+					isDescending={isDescending}
+					onDirectionChange={setIsDescending}
+				/>
+				<CategoryList
+					onAction={categoryChange}
+					activeCategories={activeCategories}
+				/>
+				<FilterList
+					onChange={setFilters}
+					filters={filters}
+				/>
+			</div>
+
 			<ProductList
 				sortedAndFilteredList={sortedAndFilteredList}
 				addProduct={props.addProduct}
