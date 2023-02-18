@@ -1,4 +1,4 @@
-import ControlHover from './ControlHover';
+import ControlProduct from './ControlProduct';
 import styles from '/src/styles/shop/product/Product.module.css';
 
 export default function Product(props) {
@@ -9,10 +9,17 @@ export default function Product(props) {
 				alt={props.product.title}
 				src={props.product.images.at(-1)}
 			/>
-			<h3 className={styles.name}>{props.product.title}</h3>
-			<span className={styles.price}>{props.product.price}$</span>
-			<span className={styles.rating}>{props.product.rating}</span>
-			<ControlHover
+			<div className={styles.name}>{props.product.title}</div>
+			<div className={styles.price}>{props.product.price}$</div>
+			<div className={styles.rating}>
+				<img
+					className={styles.star}
+					alt='star'
+					src={'/src/assets/star.svg'}
+				/>{' '}
+				{props.product.rating}
+			</div>
+			<ControlProduct
 				onAdd={props.addProduct}
 				product={props.product}
 			/>
