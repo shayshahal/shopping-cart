@@ -1,25 +1,47 @@
-.Product{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    grid-auto-flow: row;
-    align-items: center;
-    border: .2rem solid currentColor;
-    padding: .5em;
-    width: 40vw;
+.Product {
+	display: grid;
+	grid-template-areas:
+		'image'
+		'name'
+        'rating'
+        'price'
+		'control';
+	border-radius: 1rem;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	grid-template-rows: 60% min-content min-content min-content auto;
+	transition: transform .2s ease;
 }
-.image{
-    aspect-ratio: 1/1;
-    grid-column: 1/4;
+.Product:hover {
+	transform: scale(1.1);
 }
-.name{
-    font-size: 1.5rem;
-    text-align: start;
+.image {
+	grid-area: image;
+	object-fit: cover;
+	object-position: top center;
+	height: 100%;
+	width: 100%;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
 }
-.price{
-    text-align: end;
+.name {
+    font-size: 1.25rem;
+    padding-inline: .5em;
+    font-weight: 600;
+	grid-area: name;
 }
-.rating{
-    text-align: end;
+
+.price {
+	grid-area: price;
+	font-size: 1.5rem;
+    padding-inline: .5em;
+    font-weight: 900;
+}
+.rating {
+    grid-area: rating;
+	font-size: 1rem;
+    padding-inline: .25em;
+}
+.star {
+	display: inline-block;
+	height: .875rem;
 }

@@ -5,7 +5,6 @@ function ProductList(props) {
 	return (
 		<ul className={styles.ProductList}>
 			{
-			console.log(props)}{
 			props.sortedAndFilteredList.map((product) => (
 				<Product
 					key={product.id}

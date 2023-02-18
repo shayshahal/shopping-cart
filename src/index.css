@@ -68,7 +68,7 @@ a {
 	/* Page layout */
 	display: grid;
 	grid-template-rows: auto 1fr;
-	max-height: 100%;
+	min-height: 100vh;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

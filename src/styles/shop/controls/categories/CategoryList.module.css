@@ -2,17 +2,16 @@
     position: relative;
     list-style: none;
     display: flex;
-    justify-content: start;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
     gap: 1em;
 	padding: 1em;
     flex: 8;
 }
 .button{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: .25em;
+    right: .5em;
     border: none;
     font-size: 1rem;
     font-weight: bolder;

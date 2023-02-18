@@ -1,9 +1,8 @@
 .ProductList {
     list-style: none;
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 1em;
-
+    gap: 2em;
+    padding: 1.5em 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 500px;
 }

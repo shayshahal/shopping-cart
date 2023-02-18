@@ -1,21 +1,29 @@
 .ControlProduct{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
+    grid-area: control;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    text-align: center;
-    padding-inline: 1em;
+    align-items: end;
+    grid-template-columns: 1fr auto;
+    padding: 1em;
+    gap: 1em;
 }
 .details{
     cursor: pointer;
-    margin-block: 1em .5em;
+    font-size: 1.25rem;
+    padding: .25em .5em;
+    border: 1px solid currentColor;
 }
 .button{
+    font-size: 1.25rem;
     cursor: pointer;
-    margin-block: .5em 1em;
+    border: 1px solid currentColor;
+    color: var(--main-clr);
+    padding: .25em;
+}
+.button:hover, .button:focus{
     background-color: var(--main-clr);
-    border: 1px solid #ccc;
+    color: var(--bg-clr);
+}
+.details:hover, .details:focus{
+    background-color: var(--font-clr);
+    color: var(--bg-clr);
 }

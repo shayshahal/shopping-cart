@@ -5,16 +5,16 @@ export default function ControlProduct(props) {
 	return (
 		<div className={styles.ControlProduct}>
 			<button
-				className={styles.details}
-				onClick={() => <Navigate to={`/shop:${props.product.id}`} />}
-			>
-				ⓘ
-			</button>
-			<button
 				onClick={props.onAdd}
 				className={styles.button}
 			>
 				Add to Cart
+			</button>
+			<button
+				className={styles.details}
+				onClick={() => <Navigate to={`/shop:${props.product.id}`} />}
+			>
+				ⓘ
 			</button>
 		</div>
 	);

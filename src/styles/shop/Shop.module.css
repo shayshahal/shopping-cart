@@ -1,8 +1,8 @@
-.Shop {
+.shop{
 	display: grid;
-	grid-template-rows: auto 1fr;
+	grid-template-rows: 10vh 1fr;
 }
 .controls{
 	display: flex;
-
+	flex-wrap: wrap;
 }

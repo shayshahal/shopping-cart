@@ -1,5 +1,4 @@
 .SortList {
-	grid-area: sort;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
@@ -9,6 +8,5 @@
 	align-items: center;
 	justify-items: center;
     justify-content: center;
-	column-gap: 1em;
-	flex: 1;
+	gap: 1em;
 }
