@@ -5,14 +5,14 @@ import '../../styles/navbar/Nav.css'
 import CartToggle from './cart/CartToggle';
 import Search from './Search';
 
-export default function Nav() {
+export default function Nav(props) {
 	return (
 		<nav>
 			<NavLink className={styles.NavLink} to='/'>Home</NavLink>
 			<NavLink className={styles.NavLink} to='/Shop'>Shop</NavLink>
 			<Search data-testid='search' />
 			<NavLink className={styles.NavLink} to='/About'>About</NavLink>
-			<CartToggle data-testid='cart-toggle' />
+			<CartToggle data-testid='cart-toggle' setCartItems={props.setCartItems}/>
 		</nav>
 	);
 }
