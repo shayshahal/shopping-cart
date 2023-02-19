@@ -5,7 +5,7 @@ export default function ControlProduct(props) {
 	return (
 		<div className={styles.ControlProduct}>
 			<button
-				onClick={()=>{props.onAdd(props.product)}}
+				onClick={() => props.onAdd(props.product)}
 				className={styles.button}
 			>
 				Add to Cart

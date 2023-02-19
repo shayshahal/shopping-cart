@@ -32,8 +32,7 @@ export default function App() {
 
 	function addItemToCart(item) {
 		setCartItems((prev) => {
-			let cart = prev;
-			return (item.id in cart)?prev:Object.assign(cart, { [item.id]: [item, 1] });
+			return item.id in prev ? prev : { ...prev, [item.id]: [item, 1] };
 		});
 	}
 

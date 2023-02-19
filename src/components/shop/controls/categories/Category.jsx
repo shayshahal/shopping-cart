@@ -22,7 +22,7 @@ export default function Category(props) {
 				className={styles.category}
 				type='checkbox'
 				id={props.name}
-				onClick={handleChange}
+				onChange={handleChange}
 				checked={props.isChecked}
 			/>
 			<label

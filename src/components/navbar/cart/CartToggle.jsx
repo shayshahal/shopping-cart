@@ -7,19 +7,18 @@ export default function CartToggle(props) {
 		setIsCartShowing((prev) => !prev);
 	}
 	return (
-		<button
-			className={styles.cartToggle}
-			onClick={toggleCart}
-		>
+		<div className={styles.CartContainer}>
+			<button
+				onClick={toggleCart}
+				className={styles.CartToggle}
+			></button>
 			{isCartShowing && (
 				<Cart
 					onClose={toggleCart}
 					cartItems={props.cartItems}
-					addItem={props.addItem}
-					removeItem={props.removeItem}
 					setCartItems={props.setCartItems}
 				/>
 			)}
-		</button>
+		</div>
 	);
 }
