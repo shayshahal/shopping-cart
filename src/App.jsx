@@ -9,7 +9,7 @@ import Shop from './components/shop/Shop.jsx';
 // Do lazy loading
 
 export default function App() {
-	const [cartItems, setCartItems] = useState([]);
+	const [cartItems, setCartItems] = useState({});
 	const [productsList, setProductsList] = useState([]);
 	function addItemToCart(item) {
 		setCartItems((prev) => [...prev, item]);
@@ -30,9 +30,19 @@ export default function App() {
 		};
 	}, []);
 
+	function addItemToCart(item) {
+		setCartItems((prev) => {
+			let cart = prev;
+			return (item.id in cart)?prev:Object.assign(cart, { [item.id]: [item, 1] });
+		});
+	}
+
 	return (
 		<BrowserRouter init>
-			<Nav />
+			<Nav
+				cartItems={cartItems}
+				setCartItems={setCartItems}
+			/>
 			<Routes>
 				<Route
 					path='/'
