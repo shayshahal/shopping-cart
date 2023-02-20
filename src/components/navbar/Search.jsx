@@ -1,11 +1,10 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import styles from '/src/styles/navbar/Search.module.css';
 
-export default function Search() {
+export default function Search(props) {
 	const navigate = useNavigate();
-	const [searchParams, setSearchParams] = useSearchParams();
 	function handleSearch(e) {
-		setSearchParams(e.target.value);
+		props.setSearchParams(e.target.value);
 	}
 	return (
 		<div

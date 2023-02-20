@@ -10,7 +10,7 @@ export default function Nav(props) {
 		<nav>
 			<NavLink className={styles.NavLink} to='/'>Home</NavLink>
 			<NavLink className={styles.NavLink} to='/Shop'>Shop</NavLink>
-			<Search data-testid='search' />
+			<Search data-testid='search' setSearchParams={props.setSearchParams}/>
 			<NavLink className={styles.NavLink} to='/About'>About</NavLink>
 			<CartToggle data-testid='cart-toggle' cartItems={props.cartItems} setCartItems={props.setCartItems}/>
 		</nav>
