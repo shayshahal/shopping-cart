@@ -10,7 +10,7 @@ export default function Product(props) {
 				src={props.product.images.at(-1)}
 			/>
 			<div className={styles.name}>{props.product.title}</div>
-			<div className={styles.price}>{props.product.price}$</div>
+			<div className={styles.price}>{props.product.price.toLocaleString('en-US')}$</div>
 			<div className={styles.rating}>
 				<img
 					className={styles.star}

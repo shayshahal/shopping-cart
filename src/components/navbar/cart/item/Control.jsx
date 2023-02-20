@@ -4,7 +4,7 @@ export default function Control(props) {
 	return (
 		<div className={styles.Control}>
 			<span className={styles.amountControl}>
-				<button onClick={props.onDecrement} className={styles.decBtn}>{'-'}</button>
+				<button onClick={props.onDecrement} className={styles.amountBtn}>{'-'}</button>
 				<input
 					type='number'
 					min={1}
@@ -12,7 +12,7 @@ export default function Control(props) {
 					value={props.amount}
                     className={styles.amountInput}
 				/>
-				<button onClick={props.onIncrement} className={styles.incBtn}>{'+'}</button>
+				<button onClick={props.onIncrement} className={styles.amountBtn}>{'+'}</button>
 			</span>
             <button onClick={props.onDelete} className={styles.dltBtn}>Delete</button>
 		</div>
