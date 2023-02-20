@@ -1,0 +1,81 @@
+.Cart{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 75%;
+    height: 100%;
+    color: var(--bg-clr);
+    background-color: var(--font-clr);
+    z-index: 99;
+    display: grid;
+    grid-template-rows: min-content 80% auto;
+    animation: slideIn .2s ease;
+    gap: 1em;
+    padding: 1em;
+
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+.slideOut{
+    animation: slideOut .2s ease;
+}
+@keyframes slideOut {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid currentColor;
+}
+.closeBtn{
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+
+    font-size: 3rem;
+}
+.cartTitle{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: end;
+}
+.checkOutBtn{
+    display: block;
+    color: var(--main-clr);
+    border: 1px solid currentColor;
+    cursor: pointer;
+}
+.checkOutBtn:hover{
+    background-color: var(--main-clr);
+    color: var(--bg-clr);
+}
+.itemList{
+    overflow: auto;
+}
+.itemList::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.itemList::-webkit-scrollbar-track {
+    background: inherit; 
+}
+
+/* Handle */
+.itemList::-webkit-scrollbar-thumb {
+    background: var(--main-clr); 
+}
