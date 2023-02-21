@@ -18,7 +18,8 @@ export default function Product(props) {
 				<img
 					className={styles.star}
 					alt='star'
-					src={'/star.svg'}
+					src='/star.svg'
+					loading='lazy'
 				/>{' '}
 				{props.product.rating}
 			</div>
