@@ -26,7 +26,7 @@ export default function Details() {
 					<img
 						className={styles.star}
 						alt='star'
-						src={'/src/assets/star.svg'}
+						src={'/public/star.svg'}
 					/>{' '}
 					{location.state.rating}
 				</div>

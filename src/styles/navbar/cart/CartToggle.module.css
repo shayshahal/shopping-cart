@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     background-color: var(--main-clr);
-    background-image: url('../../../assets/cart.png');
+    background-image: url('/public/cart.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;

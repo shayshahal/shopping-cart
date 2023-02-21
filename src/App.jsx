@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, useSearchParams } from 'react-router-dom';
 import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
-import Details from './components/Details.jsx';
+import Details from './components/details/Details.jsx';
 import Home from './components/Home.jsx';
 import Nav from './components/navbar/Nav.jsx';
 import Shop from './components/shop/Shop.jsx';
@@ -11,7 +11,6 @@ import Shop from './components/shop/Shop.jsx';
 export default function App() {
 	const [cartItems, setCartItems] = useState({});
 	const [productsList, setProductsList] = useState([]);
-	const [searchParams, setSearchParams] = useSearchParams();
 	function addItemToCart(item) {
 		setCartItems((prev) => [...prev, item]);
 	}
@@ -42,7 +41,7 @@ export default function App() {
 			<Nav
 				cartItems={cartItems}
 				setCartItems={setCartItems}
-				setSearchParams={setSearchParams}
+				/*setSearchParams={setSearchParams}*/
 			/>
 			<Routes>
 				<Route
@@ -59,7 +58,7 @@ export default function App() {
 					}
 				/>
 				<Route
-					path='/Shop:name'
+					path='/Shop/:title'
 					element={<Details />}
 				/>
 				<Route

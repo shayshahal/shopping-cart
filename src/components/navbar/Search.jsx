@@ -4,7 +4,7 @@ import styles from '/src/styles/navbar/Search.module.css';
 export default function Search(props) {
 	const navigate = useNavigate();
 	function handleSearch(e) {
-		props.setSearchParams(e.target.value);
+		props.setSearchParams(e.target.value, {replace: true});
 	}
 	return (
 		<div
