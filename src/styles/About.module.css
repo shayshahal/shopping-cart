@@ -1,0 +1,40 @@
+.About{
+    display: grid;
+    grid-template-rows: auto auto .75fr auto;
+    padding: 1em;
+}
+.introduction{
+    font-size: 5rem;
+}
+.para{
+    font-size: 2rem;
+}
+.github{
+    color: var(--main-clr);
+    font-weight: 600;
+}
+.siteImages{
+    display: flex;
+    gap: 5em;
+    padding: 0em 10em;
+    text-align: center;
+    align-items: stretch;
+}
+.siteImage{
+    flex: 1;
+    display: grid;
+    height: 100%;
+    grid-template-rows: min-content 1fr;
+    border: 1px solid var(--main-clr);
+}
+.img{
+    object-fit: cover;
+    height: 100%;
+}
+.siteTitle{
+    font-size: clamp(.5rem, 1vw + 1rem, 1.5rem);
+}
+.thanks{
+    text-align: center;
+    align-self: center;
+}
