@@ -13,21 +13,21 @@ export default function About() {
 				<div className={styles.siteImage}>
 					Calculator
 					<img
-						src={'/public/Calculator.png'}
+						src={'/Calculator.png'}
 						alt='Calculator site image'
 					/>
 				</div>
 				<div className={styles.siteImage}>
 					Battleships game
 					<img
-						src={'/public/Battleship.png'}
+						src={'/Battleship.png'}
 						alt='Battleship site image'
 					/>
 				</div>
 				<div className={styles.siteImage}>
 					League of Legends memory game
 					<img
-						src={'/public/MemoryCard.png'}
+						src={'/MemoryCard.png'}
 						alt='MemoryCard site image'
 					/>
 				</div>

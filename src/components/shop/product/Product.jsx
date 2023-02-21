@@ -6,16 +6,19 @@ export default function Product(props) {
 		<li className={styles.Product}>
 			<img
 				className={styles.image}
-				alt={props.product.title}
+				alt={props.product.title + ' image'}
 				src={props.product.images.at(-1)}
+				loading='lazy'
 			/>
 			<div className={styles.name}>{props.product.title}</div>
-			<div className={styles.price}>{props.product.price.toLocaleString('en-US')}$</div>
+			<div className={styles.price}>
+				{props.product.price.toLocaleString('en-US')}$
+			</div>
 			<div className={styles.rating}>
 				<img
 					className={styles.star}
 					alt='star'
-					src={'/public/star.svg'}
+					src={'/star.svg'}
 				/>{' '}
 				{props.product.rating}
 			</div>

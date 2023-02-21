@@ -4,7 +4,6 @@ import ProductGallery from './ProductGallery';
 
 export default function Details() {
 	const location = useLocation();
-	console.log(location);
 	return (
 		<main className={styles.Details}>
 			<ProductGallery images={location.state.images} />
@@ -26,7 +25,7 @@ export default function Details() {
 					<img
 						className={styles.star}
 						alt='star'
-						src={'/public/star.svg'}
+						src={'/star.svg'}
 					/>{' '}
 					{location.state.rating}
 				</div>

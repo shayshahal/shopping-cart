@@ -3,6 +3,7 @@ import styles from '../../styles/details/ProductGallery.module.css';
 
 export default function ProductGallery(props) {
 	const [bigImage, setBigImage] = useState(props.images.at(-1));
+
 	return (
 		<div className={styles.ProductGallery}>
 			<img
