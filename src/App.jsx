@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, useSearchParams } from 'react-router-dom';
+import {
+	BrowserRouter,
+	Route,
+	Routes,
+	useSearchParams,
+} from 'react-router-dom';
 import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
 import Details from './components/details/Details.jsx';
@@ -59,7 +64,7 @@ export default function App() {
 				/>
 				<Route
 					path='/Shop/:title'
-					element={<Details />}
+					element={<Details onAdd={addItemToCart} />}
 				/>
 				<Route
 					path='/About'

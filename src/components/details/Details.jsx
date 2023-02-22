@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import styles from '../../styles/details/Details.module.css';
 import ProductGallery from './ProductGallery';
 
-export default function Details() {
+export default function Details(props) {
 	const location = useLocation();
 	return (
 		<main className={styles.Details}>
@@ -36,7 +36,7 @@ export default function Details() {
 				<p className={styles.description}>
 					{location.state.description}.
 				</p>
-				<button className={styles.addButton}>Add to Cart</button>
+				<button className={styles.addButton} onClick={()=>{props.onAdd(location.state)}}>Add to Cart</button>
 			</div>
 		</main>
 	);

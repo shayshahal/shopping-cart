@@ -1,8 +1,7 @@
-import { useNavigate, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styles from '/src/styles/shop/product/ControlProduct.module.css';
 
 export default function ControlProduct(props) {
-	const navigate = useNavigate();
 	return (
 		<div className={styles.ControlProduct}>
 			<button
@@ -16,7 +15,7 @@ export default function ControlProduct(props) {
 				to={
 					`/shop/${props.product.title}`
 				}
-				state={props.product}
+				state={props.product} 
 			>
 				ⓘ
 			</Link>

@@ -7,7 +7,7 @@ export default function Product(props) {
 			<img
 				className={styles.image}
 				alt={props.product.title + ' image'}
-				src={props.product.images.at(-1)}
+				src={props.product.thumbnail}
 				loading='lazy'
 			/>
 			<div className={styles.name}>{props.product.title}</div>
