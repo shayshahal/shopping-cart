@@ -30,16 +30,15 @@
 	font-size: 2rem;
 	padding: 0.25em 1em;
 	margin-left: 1em;
-	background-color: var(--main-clr);
-	color: var(--bg-clr);
+	color: var(--main-clr);
+	border: 1px solid var(--main-clr);
 	border-radius: 3rem;
-	transition: transform 0.2s ease;
 	grid-area: d;
 	animation: slideInLink 1s cubic-bezier(0, 1, 0, 1);
 }
 .shopLink:hover {
-	color: var(--font-clr);
-	transform: scale(1.1);
+	color: var(--bg-clr);
+	background-color: var(--main-clr);
 }
 @keyframes slideIn {
 	from {
