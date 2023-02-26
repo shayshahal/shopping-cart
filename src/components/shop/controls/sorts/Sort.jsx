@@ -2,16 +2,10 @@ import styles from '/src/styles/shop/controls/sorts/Sort.module.css';
 
 export default function Sort(props) {
 	function handleChange() {
-		props.onClick(props.name)
+		props.onClick(props.name);
 	}
 	return (
 		<div className={styles.Sort}>
-			<label
-				htmlFor={props.name}
-				className={styles.label}
-			>
-				{props.name}
-			</label>
 			<input
 				type='radio'
 				name='radio'
@@ -20,6 +14,12 @@ export default function Sort(props) {
 				checked={props.isChecked}
 				onChange={handleChange}
 			/>
+			<label
+				htmlFor={props.name}
+				className={styles.label}
+			>
+				{props.name}
+			</label>
 		</div>
 	);
 }

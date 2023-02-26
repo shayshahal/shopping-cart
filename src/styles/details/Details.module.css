@@ -12,9 +12,12 @@
 }
 .title {
 	font-size: 5rem;
+	font-weight: 100;
+	font-style: italic;
 }
 .price {
 	font-size: 3rem;
+	font-weight: 400;
 }
 .discount {
 	text-decoration: line-through;
@@ -37,6 +40,7 @@
 }
 .addButton {
 	font-size: 2rem;
+	font-weight: 600;
 	padding: 0.25em 1em;
 	justify-self: end;
 	color: var(--main-clr);

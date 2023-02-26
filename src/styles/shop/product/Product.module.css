@@ -25,23 +25,24 @@
 }
 .name {
     font-size: 1.25rem;
-    padding-inline: .5em;
-    font-weight: 600;
+	font-style: italic;
+    padding: .25em .5em 0em .5em;
 	grid-area: name;
 }
 
 .price {
 	grid-area: price;
 	font-size: 1.5rem;
+	font-weight: 600;
     padding-inline: .5em;
-    font-weight: 900;
 }
 .rating {
     grid-area: rating;
 	font-size: 1rem;
     padding-inline: .25em;
+	font-weight: 300;
 }
 .star {
 	display: inline-block;
-	height: .875rem;
+	height: 1rem;
 }

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
 	BrowserRouter,
 	Route,
-	Routes,
-	useSearchParams,
+	Routes
 } from 'react-router-dom';
 import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
@@ -46,7 +45,7 @@ export default function App() {
 			<Nav
 				cartItems={cartItems}
 				setCartItems={setCartItems}
-				/*setSearchParams={setSearchParams}*/
+				setSearchParams={null}
 			/>
 			<Routes>
 				<Route

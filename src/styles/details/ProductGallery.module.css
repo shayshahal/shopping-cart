@@ -1,8 +1,8 @@
 .ProductGallery{
     flex: 1;
     display: grid;
-    grid-template-rows: 75% 25%;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: 80% 20%;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     align-items: center;
     justify-items: center;
     justify-content: center;

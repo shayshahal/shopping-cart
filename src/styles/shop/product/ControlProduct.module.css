@@ -5,6 +5,7 @@
     grid-template-columns: 1fr auto;
     padding: 1em;
     gap: 1em;
+    font-weight: 600;
 }
 .details{
     cursor: pointer;

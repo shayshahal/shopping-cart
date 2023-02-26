@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: stretch;
     font-size: 1rem;
+    font-weight: 400;
 }
 .dltBtn {
 	display: inline-block;
@@ -26,12 +27,11 @@
     background-color: var(--main-clr);
     color: var(--font-clr);
     padding: .1em .75em;
-    font-weight: bolder;
     height: 100%;
     cursor: pointer;
 }
 .amountBtn:hover{
-    color: var(--bg-clr);
+    color: var(--bg-clr);   
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

@@ -5,11 +5,13 @@ nav {
 	justify-items: stretch;
 	align-items: stretch;
 	font-size: 1.5rem;
+	font-weight: 100;
 	background-color: var(--font-clr);
 }
 .NavLink {
-	transition: all 0.2s;
+	transition: color .2s, background-color .2s;
 	padding-block: 0.5em;
+	font-style: italic;
 	text-align: center;
 	color: var(--bg-clr);
 }

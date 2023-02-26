@@ -17,7 +17,7 @@ export default function Category(props) {
 		}
 	}
 	return (
-		<li className={styles.category}>
+		<li className={styles.Category}>
 			<input
 				className={styles.category}
 				type='checkbox'

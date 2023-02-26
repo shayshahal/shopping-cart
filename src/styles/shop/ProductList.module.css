@@ -3,6 +3,6 @@
     gap: 2em;
     padding: 1.5em 1em;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 500px;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: 30rem;
 }

@@ -1,14 +1,14 @@
-.Sort{
-    transition: background-color .2s ease;
-    border: .2rem solid currentColor;
-    border-radius: .5rem;
-    padding: .25em 1em;
-}
-.Sort:has(.radio:checked){
+.radio:checked + label{
     background-color: var(--main-clr);
+    color: var(--bg-clr);
 }
 .label{
     cursor: pointer;
+    transition: background-color .2s ease;
+    border: 1px solid currentColor;
+    color: var(--main-clr);
+    border-radius: .5rem;
+    padding: 1em;
 }
 .radio{
     appearance: none;

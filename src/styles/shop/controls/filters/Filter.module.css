@@ -4,5 +4,6 @@
 .input {
 	margin: .5em;
 	width: 5rem;
+	padding: 0em .5em;
 	display: inline-block;
 }

@@ -5,6 +5,46 @@
 	--bg-clr: var(--light-clr);
 	--font-clr: var(--dark-clr);
 }
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Medium.ttf') format('TrueType');
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-MediumItalic.ttf') format('TrueType');
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Thin.ttf') format('TrueType');
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-ThinItalic.ttf') format('TrueType');
+	font-weight: 100;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Regular.ttf') format('TrueType');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Italic.ttf') format('TrueType');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Bold.ttf') format('TrueType');
+	font-weight: 600;
+	font-style: normal;
+}
 .darkMode {
 	--bg-clr: var(--dark-clr);
 	--font-clr: var(--light-clr);
@@ -17,6 +57,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	font: inherit;
 }
 *::selection {
 	background-color: var(--font-clr);
@@ -45,6 +86,7 @@ svg {
 html,
 body {
 	height: 100%;
+	font-family: 'Roboto', sans-serif;
 }
 /* Set core body defaults */
 body {
@@ -69,6 +111,12 @@ a {
 	display: grid;
 	grid-template-rows: auto 1fr;
 	height: 100%;
+
+}
+@media (max-width: 700px){
+	*{
+		font-size: 13px;
+	}
 }
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

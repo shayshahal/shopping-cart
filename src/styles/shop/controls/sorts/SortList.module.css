@@ -1,6 +1,6 @@
 .SortList {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
 		'dir dir dir'
 		'sort sort sort';

@@ -1,8 +1,8 @@
 .categoryList {
     position: relative;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     align-items: center;
     gap: 1em;
 	padding: 1em;
@@ -14,7 +14,7 @@
     right: .5em;
     border: none;
     font-size: 1rem;
-    font-weight: bolder;
+    font-weight: 600;
     align-content: center;
     color: var(--main-clr);
     cursor: pointer;

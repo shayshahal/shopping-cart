@@ -18,9 +18,12 @@
 .itemName{
     grid-area: name;
     text-align: end;
+    font-weight: 100;
+    font-style: italic;
 }
 .itemPrice{
     grid-area: price;
     text-align: end;
     padding-bottom: 1em;
+    font-weight: 600;
 }

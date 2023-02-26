@@ -45,18 +45,20 @@
     display: inline-block;
     border: none;
     cursor: pointer;
-
+    font-weight: 100;
     font-size: 3rem;
 }
 .cartTitle{
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 100;
+    font-style: italic;
     text-align: end;
 }
 .checkOutBtn{
     display: block;
     color: var(--main-clr);
-    border: 1px solid currentColor;
+    font-weight: 600;
+    border: 1px solid var(--main-clr);
     cursor: pointer;
 }
 .checkOutBtn:hover{
