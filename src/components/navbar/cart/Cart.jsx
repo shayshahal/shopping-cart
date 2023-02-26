@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import Item from './item/Item';
 import styles from '/src/styles/navbar/cart/Cart.module.css';
 
 export default function Cart(props) {
-	function handleCheckOut() {}
+	const navigate = useNavigate();
+	function handleCheckOut() {
+		if (Object.entries(props.cartItems).length)
+			navigate('/Complete', { state: props.cartItems });
+	}
 	return (
 		<div
 			className={styles.Cart}
