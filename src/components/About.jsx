@@ -11,7 +11,7 @@ export default function About() {
 				Here are some noticeable ones:
 			</p>
 			<div className={styles.siteImages}>
-				<div className={styles.siteImage}>
+				<a className={styles.siteImage} href='https://shayshahal.github.io/calculator/' target='_blank'>
 					<h3 className={styles.siteTitle}>Calculator</h3>
 					<img
 						className={styles.img}
@@ -19,8 +19,8 @@ export default function About() {
 						alt='Calculator site image'
 						loading='lazy'
 					/>
-				</div>
-				<div className={styles.siteImage}>
+				</a>
+				<a className={styles.siteImage} href='https://shayshahal.github.io/battleship/' target='_blank'>
 					<h3 className={styles.siteTitle}>Battleships game</h3>
 					<img
 						className={styles.img}
@@ -28,16 +28,16 @@ export default function About() {
 						alt='Battleship site image'
 						loading='lazy'
 					/>
-				</div>
-				<div className={styles.siteImage}>
-					<h3 className={styles.siteTitle}>LoL memory game</h3>
+				</a>
+				<a className={styles.siteImage} href='https://shayshahal.github.io/memory-card/' target='_blank'>
+					{<h3 className={styles.siteTitle}>LoL memory game</h3>}
 					<img
 						className={styles.img} 
 						src='/MemoryCard.png'
 						alt='MemoryCard site image'
 						loading='lazy'
 					/>
-				</div>
+				</a>
 			</div>
 			<h1 className={styles.thanks}>Thanks for visiting!</h1>
 		</main>

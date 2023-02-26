@@ -1,13 +1,15 @@
 .About{
     display: grid;
-    grid-template-rows: auto auto .75fr auto;
+    grid-template-rows: auto auto 1fr min-content;
     padding: 1em;
 }
 .introduction{
     font-size: 5rem;
+    font-style: italic;
 }
 .para{
     font-size: 2rem;
+    font-weight: 300;
 }
 .github{
     color: var(--main-clr);
@@ -15,26 +17,28 @@
 }
 .siteImages{
     display: flex;
-    gap: 5em;
-    padding: 0em 10em;
+    flex-wrap: wrap;
+    gap: 7em;
+    padding: 0em 7em;
     text-align: center;
-    align-items: stretch;
+    align-content: center;
 }
 .siteImage{
     flex: 1;
     display: grid;
-    height: 100%;
     grid-template-rows: min-content 1fr;
+    justify-items: stretch;
     border: 1px solid var(--main-clr);
+    cursor: pointer;
+    transition: flex .2s ease;
+}
+.siteImage:hover{
+    flex: 1.5;
 }
 .img{
     object-fit: cover;
     height: 100%;
 }
-.siteTitle{
-    font-size: clamp(.5rem, 1vw + 1rem, 1.5rem);
-}
 .thanks{
     text-align: center;
-    align-self: center;
 }
