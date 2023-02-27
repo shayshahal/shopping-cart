@@ -5,8 +5,7 @@ export default function Search() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const navigate = useNavigate();
 	function handleSearch(e) {
-		setSearchParams(e.target.value, {replace: true});
-		console.log(searchParams)
+		setSearchParams({q:e.target.value}, {replace: true});
 	}
 	return (
 		<div
@@ -20,7 +19,7 @@ export default function Search() {
 				name='search'
 				id='search'
 				onChange={handleSearch}
-				onFocus={() => {
+				onFocus={()=>{
 					navigate('/Shop');
 				}}
 				autoComplete='off'

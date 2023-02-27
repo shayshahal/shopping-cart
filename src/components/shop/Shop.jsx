@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import styles from '../../styles/shop/Shop.module.css';
 import CategoryList from './controls/categories/CategoryList';
 import FilterList from './controls/filters/FilterList';
@@ -6,6 +7,7 @@ import SortList from './controls/sorts/SortList';
 import ProductList from './ProductList';
 
 export default function Shop(props) {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
 	const [activeSort, setActiveSort] = useState('price');
 	const [activeCategories, setActiveCategories] = useState(new Set());
@@ -41,15 +43,21 @@ export default function Shop(props) {
 		.filter((product) => filterProduct(product));
 	function filterProduct(product) {
 		if (
-			!activeCategories.has(product.category) &&
-			activeCategories.size !== 0
+			(!activeCategories.has(product.category) &&
+				activeCategories.size !== 0) ||
+			!product.title
+				.toLowerCase()
+				.includes(
+					searchParams.get('q')
+						? searchParams.get('q').toLowerCase()
+						: ''
+				)
 		)
 			return false;
 		for (const [k, v] of Object.entries(filters))
 			if (product[k] < v.min || product[k] > v.max) return false;
 		return true;
 	}
-
 	return (
 		<main className={styles.Shop}>
 			<div className={styles.controls}>
