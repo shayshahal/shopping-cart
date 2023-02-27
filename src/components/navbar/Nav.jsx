@@ -7,10 +7,10 @@ import Search from './Search';
 export default function Nav(props) {
 	return (
 		<nav>
-			<NavLink className={styles.NavLink} to='/'>Home</NavLink>
-			<NavLink className={styles.NavLink} to='/Shop'>Shop</NavLink>
+			<NavLink className={styles.NavLink + ' ' + styles.home} to='/'>Home</NavLink>
+			<NavLink className={styles.NavLink + ' ' + styles.shop} to='/Shop'>Shop</NavLink>
 			<Search data-testid='search'/>
-			<NavLink className={styles.NavLink} to='/About'>About</NavLink>
+			<NavLink className={styles.NavLink + ' ' + styles.about} to='/About'>About</NavLink>
 			<CartToggle data-testid='cart-toggle' cartItems={props.cartItems} setCartItems={props.setCartItems}/>
 		</nav>
 	);

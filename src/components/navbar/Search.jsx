@@ -9,7 +9,7 @@ export default function Search() {
 	}
 	return (
 		<div
-			className={styles.divContainer}
+			className={styles.Search}
 			data-testid='search-container'
 		>
 			<label htmlFor='search' />

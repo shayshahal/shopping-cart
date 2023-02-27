@@ -1,9 +1,12 @@
+.Search{
+	grid-area: search;
+}
 input[type='search'] {
 	width: 50%;
 	height: 100%;
 	border: none;
 	font-size: 2rem;
-	padding-inline: 0.5em;
+	padding: .25em .5em;
 	appearance: none;
 	outline: none;
 	transition: all 0.2s ease;

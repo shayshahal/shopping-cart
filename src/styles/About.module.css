@@ -32,6 +32,7 @@
     border: 1px solid var(--main-clr);
     cursor: pointer;
     transition: flex .2s ease;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .siteImage:hover{
     flex: 1.5;
@@ -42,4 +43,5 @@
 }
 .thanks{
     text-align: center;
+    font-size: 1.5rem ;
 }
