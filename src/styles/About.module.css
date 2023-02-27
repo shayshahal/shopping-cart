@@ -13,6 +13,7 @@
 }
 .github{
     color: var(--main-clr);
+    font-size: 2rem;
     font-weight: 600;
 }
 .siteImages{

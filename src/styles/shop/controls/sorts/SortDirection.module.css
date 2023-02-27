@@ -4,6 +4,7 @@
     border: .1rem solid currentColor;
     border-radius: .5rem;
     padding: .25em;
+    align-self: start;
 }
 .label{
     cursor: pointer;

@@ -4,9 +4,9 @@
 	grid-template-areas:
 		'dir dir dir'
 		'sort sort sort';
-	padding: 0em 1em;
+	padding: 1em;
 	align-items: center;
 	justify-items: center;
     justify-content: center;
-	gap: 1em;
+	gap: 2em;
 }

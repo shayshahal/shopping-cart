@@ -1,8 +1,16 @@
 .shop{
 	display: grid;
-	grid-template-rows: 10vh 1fr;
+	grid-template-rows: auto 1fr;
 }
 .controls{
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	align-content: center;
+	padding: 1em 0em;
+}
+@media (max-width: 800px){
+	.controls{
+		grid-template-columns: 1fr;
+		gap: 1em;
+	}
 }

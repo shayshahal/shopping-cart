@@ -5,8 +5,7 @@
     grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     align-items: center;
     gap: 1em;
-	padding: 1em;
-    flex: 8;
+	padding: 1em 1em;
 }
 .button{
     position: absolute;
