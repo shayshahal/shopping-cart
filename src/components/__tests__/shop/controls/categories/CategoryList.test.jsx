@@ -1,32 +1,23 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { vi } from 'vitest';
 
-import CategoryList from '../../../controls/categories/categoryList';
-
-const categoryList = ['category1', 'category2', 'category3', 'category4'];
+import CategoryList from '../../../../shop/controls/categories/CategoryList';
 
 describe('CategoryList component tests', () => {
 	test('renders CategoryList successfully', () => {
-		render(
-			<categoryList
-				onClick={vi.fn()}
-				categoryList={categoryList}
-			/>
-		);
+		render(<CategoryList onCategoryClick={vi.fn()} />);
 		expect(screen.getByRole('list')).toBeInTheDocument();
 	});
-	test('renders categoryList items successfully', () => {
-		render(
-			<categoryList
-				onClick={vi.fn()}
-				categoryList={categoryList}
-			/>
-		);
-		expect(screen.getByRole('list')).toContainElement(
-			screen.getByRole('listitem')
-		);
-		expect(screen.getAllByRole('listitem').toHaveLength(5));
-		expect(screen.getByRole('list')).toMatchSnapshot();
+	test('calls function successfully on reset click', async () => {
+		const onClickMock = vi.fn();
+		const user = userEvent.setup();
+
+		render(<CategoryList onCategoryClick={onClickMock} />);
+		const resetButton = screen.getByRole('button', { name: 'reset' });
+		await user.click(resetButton);
+
+		expect(onClickMock).toHaveBeenNthCalledWith(1, new Set());
 	});
 });

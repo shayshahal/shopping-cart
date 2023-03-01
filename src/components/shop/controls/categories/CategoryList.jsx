@@ -16,14 +16,17 @@ export default function CategoryList(props) {
 			setCategoryList(data);
 		});
 	}, []);
+
 	function handleClick() {
 		props.onCategoryClick(new Set());
 	}
+
 	return (
 		<ul className={styles.categoryList}>
 			<button
 				className={styles.button}
 				onClick={handleClick}
+				name='reset'
 			>
 				reset
 			</button>

@@ -1,73 +1,46 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { vi } from 'vitest';
 
-import Category from '../../../controls/categories/Category';
-
-const onClickMock = vi.fn();
+import Category from '../../../../shop/controls/categories/Category';
 
 describe('Category Component tests', () => {
 	test('Category component renders successfully', () => {
 		render(
 			<Category
-				onClick={onClickMock}
-				name='category2'
+				name={'shoes'}
+				onClick={vi.fn()}
+				isChecked={false}
 			/>
 		);
 		expect(screen.getByRole('listitem')).toBeInTheDocument();
+		expect(screen.getByRole('listitem')).toHaveTextContent('shoes');
+		expect(screen.getByRole('checkbox')).not.toBeChecked();
 	});
-	describe('radio tests', () => {
-		test('Category component renders radio successfully', () => {
-			render(
-				<Category
-					onClick={onClickMock}
-					name='category2'
-				/>
-			);
-			expect(screen.getByRole('listitem')).toContainElement(
-				screen.getByRole('radio')
-			);
-			expect(screen.getByRole('radio').labels[0]).toHaveTextContent(
-				'category2'
-			);
-		});
-		test('Highlights after pressing radio', () => {
-			render(
-				<Category
-					onClick={onClickMock}
-					name='category2'
-				/>
-			);
-			userEvent.click(screen.getByRole('radio'));
-			expect(onClickMock).toHaveBeenCalledWith('category2', false);
-		});
+	test('Category component renders correctly', () => {
+		render(
+			<Category
+				name={'shoes'}
+				onClick={vi.fn()}
+				isChecked={true}
+			/>
+		);
+		expect(screen.getByRole('checkbox')).toBeChecked();
 	});
+	test('calls function on click', async () => {
+		const onClickMock = vi.fn();
+		const user = userEvent.setup();
 
-	describe('checkbox tests', () => {
-		test('Category component renders checkbox inside radio successfully', () => {
-			render(
-				<Category
-					onClick={onClickMock}
-					name='category2'
-				/>
-			);
-			expect(screen.getByRole('listitem')).toContainElement(
-				screen.getByRole('checkbox')
-			);
-		});
-		test('Changes after pressing checkbox', () => {
-			render(
-				<Category
-					onClick={onClickMock}
-					name='category2'
-				/>
-			);
+		render(
+			<Category
+				name={'shoes'}
+				onClick={onClickMock}
+				isChecked={false}
+			/>
+		);
+		await user.click(screen.getByRole('checkbox'));
 
-			userEvent.click(screen.getByRole('checkbox'));
-			expect(onClickMock).toHaveBeenCalledWith('category2', true);
-			expect(screen.getByRole('checkbox').labels[0]).toHaveTextContent(
-				'-'
-			);
-		});
+		expect(onClickMock).toHaveBeenCalledTimes(1);
 	});
 });
