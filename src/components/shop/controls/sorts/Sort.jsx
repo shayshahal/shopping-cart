@@ -5,7 +5,10 @@ export default function Sort(props) {
 		props.onClick(props.name);
 	}
 	return (
-		<div className={styles.Sort}>
+		<div
+			className={styles.Sort}
+			data-testid='sort-container'
+		>
 			<input
 				type='radio'
 				name='radio'

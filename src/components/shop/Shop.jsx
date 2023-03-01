@@ -15,6 +15,7 @@ export default function Shop(props) {
 		price: { min: 0, max: 100000 },
 		rating: { min: 0, max: 5 },
 	});
+
 	const sortFunctions = {
 		price: (a, b) => {
 			if (isDescending) {
@@ -38,9 +39,11 @@ export default function Shop(props) {
 			}
 		},
 	};
+
 	const sortedAndFilteredList = props.productList
 		.sort((a, b) => sortFunctions[activeSort](a, b))
 		.filter((product) => filterProduct(product));
+
 	function filterProduct(product) {
 		if (
 			(!activeCategories.has(product.category) &&
@@ -58,6 +61,7 @@ export default function Shop(props) {
 			if (product[k] < v.min || product[k] > v.max) return false;
 		return true;
 	}
+
 	return (
 		<main className={styles.Shop}>
 			<div className={styles.controls}>
