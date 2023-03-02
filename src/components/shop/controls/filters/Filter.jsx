@@ -11,7 +11,10 @@ export default function Filter(props) {
 		}));
 	}
 	return (
-		<div className={styles.Filter}>
+		<div
+			className={styles.Filter}
+			data-testid='filter-container'
+		>
 			<label>{props.name}: </label>
 			<input
 				className={styles.input}
