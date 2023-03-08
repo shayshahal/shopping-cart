@@ -6,7 +6,7 @@ export default function Item(props) {
 		<div className={styles.Item}>
 			<img
 				alt={props.item.title}
-				src={props.item.images.at(-1)}
+				src={props.item.thumbnail}
 				className={styles.itemImage}
 			/>
 			<h3 className={styles.itemName}>{props.item.title}</h3>

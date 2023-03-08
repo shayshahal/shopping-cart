@@ -10,6 +10,7 @@ export default function Cart(props) {
 	}
 	return (
 		<div
+			data-testid='cart-container'
 			className={styles.Cart}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
@@ -26,12 +27,16 @@ export default function Cart(props) {
 						);
 					}}
 					className={styles.closeBtn}
+					data-testid='close-btn'
 				>
 					☰
 				</button>
 				<span className={styles.cartTitle}>Your Cart</span>
 			</div>
-			<div className={styles.itemList}>
+			<div
+				className={styles.itemList}
+				data-testid='cart-itemList'
+			>
 				{Object.entries(props.cartItems).length === 0
 					? 'Your cart is empty.'
 					: Object.entries(props.cartItems).map(([k, v]) => (

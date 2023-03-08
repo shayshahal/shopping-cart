@@ -7,10 +7,14 @@ export default function CartToggle(props) {
 		setIsCartShowing((prev) => !prev);
 	}
 	return (
-		<div className={styles.CartContainer}>
+		<div
+			className={styles.CartContainer}
+			data-testid='cartToggle-container'
+		>
 			<button
 				onClick={toggleCart}
 				className={styles.CartToggle}
+				data-testid='cartToggle-button'
 			></button>
 			{isCartShowing && (
 				<Cart
