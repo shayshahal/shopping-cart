@@ -2,9 +2,19 @@ import React from 'react';
 import { render, screen} from '@testing-library/react';
 
 import Item from '../../../../navbar/cart/item/Item';
+import { vi } from 'vitest';
 
-const name = 'blah', price = 2000;
-const item = <Item name={name} price={price}/>
+const itemMock = {
+    title: 'title',
+    price: 1000,
+    thumbnail: 'https://via.placeholder.com/150x150',
+};
+const item = <Item item={v[0]}
+amount={1}
+onDelete={vi.fn()}
+onChange={vi.fn()}
+onIncrement={vi.fn()}
+onDecrement={vi.fn()}/>
 
 describe('Item component tests', ()=>{
     test('Item renders successfully', ()=>{
