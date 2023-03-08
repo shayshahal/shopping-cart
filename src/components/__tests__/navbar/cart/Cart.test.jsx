@@ -50,7 +50,7 @@ describe('Cart tests', () => {
 	test('calls close function on button click', async () => {
 		const onCloseMock = vi.fn();
 		const user = userEvent.setup();
-		
+
 		render(
 			<MemoryRouter>
 				<Cart
@@ -62,5 +62,19 @@ describe('Cart tests', () => {
 		);
 		await user.click(screen.getByRole('button', { name: '☰' }));
 		expect(screen.queryByTestId('cart-container')).toBeNull();
+	});
+
+	test('renders correct amount of items', async () => {
+		render(
+			<MemoryRouter>
+				<Cart
+					onClose={vi.fn()}
+					cartItems={cartItemsMock}
+					setCartItems={vi.fn()}
+				/>
+			</MemoryRouter>
+		);
+
+		expect(screen.getByTestId('cart-itemList').childElementCount).toBe(3);
 	});
 });
