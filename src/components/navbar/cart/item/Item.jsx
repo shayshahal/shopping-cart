@@ -3,7 +3,10 @@ import styles from '/src/styles/navbar/cart/item/Item.module.css';
 
 export default function Item(props) {
 	return (
-		<div className={styles.Item} data-testid='item-container'>
+		<div
+			className={styles.Item}
+			data-testid='item-container'
+		>
 			<img
 				alt={props.item.title}
 				src={props.item.thumbnail}
