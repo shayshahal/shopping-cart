@@ -27,8 +27,9 @@ nav {
 }
 @media (max-width: 700px) {
 	nav {
-		grid-template-areas: 'home about'
-		'shop cart'
-		'search search'
+		grid-template-areas: 'home'
+		'about'
+		'shop'
+		'search'
 	}
 }

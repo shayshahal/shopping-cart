@@ -8,8 +8,10 @@ import CategoryList from '../../../../shop/controls/categories/CategoryList';
 describe('CategoryList component tests', () => {
 	test('renders CategoryList successfully', () => {
 		render(<CategoryList onCategoryClick={vi.fn()} />);
+		
 		expect(screen.getByRole('list')).toBeInTheDocument();
 	});
+
 	test('calls function successfully on reset click', async () => {
 		const onClickMock = vi.fn();
 		const user = userEvent.setup();

@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
 	return (
-		<main className={styles.home}>
+		<main className={styles.Home}>
 			<span className={styles.welcome}>Welcome to</span>
 			<h1 className={styles.siteName}>Shopping Cart</h1>
 			<span
