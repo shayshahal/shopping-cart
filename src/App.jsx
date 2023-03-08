@@ -45,7 +45,6 @@ export default function App() {
 			<Nav
 				cartItems={cartItems}
 				setCartItems={setCartItems}
-				setSearchParams={null}
 			/>
 			<Routes>
 				<Route
