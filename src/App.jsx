@@ -41,7 +41,7 @@ export default function App() {
 	}
 
 	return (
-		<BrowserRouter init>
+		<BrowserRouter init basename='/shopping-cart'>
 			<Nav
 				cartItems={cartItems}
 				setCartItems={setCartItems}
