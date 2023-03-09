@@ -1,14 +1,14 @@
 .categoryLabel {
-	border: .1rem solid currentColor;
-	border-radius: 0.25rem;
-	transition: background-color .2s ease;
-    padding: .5em;
-    cursor: pointer;
+	border: 0.1rem solid currentColor;
+	border-radius: 0.5rem;
+	transition: background-color 0.2s ease;
+	padding: 0.125em 0.5em;
+	cursor: pointer;
 }
-.category:checked + label{
+.category:checked + label {
 	background-color: var(--main-clr);
 	color: var(--bg-clr);
 }
-.category{
+.category {
 	appearance: none;
 }
