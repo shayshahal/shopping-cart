@@ -1,0 +1,54 @@
+App
+-----------------------------------------------------------------------------
+props: none
+state: cartItems = []
+
+Shop
+--------------------------------------------------------
+props: addProduct, productList
+state: sortBy=alphabet, filter={category: all}
+
+ProductList
+---------------------------------------
+props: addProduct, sortedAndFilteredList
+state: none
+
+Product
+-----------------------------------
+props: addProduct, name, price
+state: noneshopping cart idea.txt
+
+ControlHover
+-------------------------
+props: onAdd
+state: isShowing = false
+
+Nav
+--------------------------------------------------------------
+props: cartItems
+state: none
+
+Search
+---------------------------------------
+props: none
+state: none
+
+CartToggle
+---------------------------------------
+props: cartItems
+state: isShowing = false
+
+Cart
+----------------------------
+props: cartItems
+state: none
+
+Item
+---------------------
+props: name, price
+state: amount = 1
+
+Control
+----------------
+props: amount, onDelete
+state: none
