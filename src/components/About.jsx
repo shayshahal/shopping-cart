@@ -25,7 +25,7 @@ export default function About() {
 					<h3 className={styles.siteTitle}>Calculator</h3>
 					<img
 						className={styles.img}
-						src='../Calculator.png'
+						src='/src/assets/Calculator.png'
 						alt='Calculator site image'
 						loading='lazy'
 					/>
@@ -38,7 +38,7 @@ export default function About() {
 					<h3 className={styles.siteTitle}>Battleships game</h3>
 					<img
 						className={styles.img}
-						src='../Battleship.png'
+						src='/src/assets/Battleship.png'
 						alt='Battleship site image'
 						loading='lazy'
 					/>
@@ -51,7 +51,7 @@ export default function About() {
 					{<h3 className={styles.siteTitle}>LoL memory game</h3>}
 					<img
 						className={styles.img}
-						src='../MemoryCard.png'
+						src='/src/assets/MemoryCard.png'
 						alt='MemoryCard site image'
 						loading='lazy'
 					/>
