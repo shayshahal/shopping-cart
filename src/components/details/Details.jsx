@@ -25,7 +25,7 @@ export default function Details(props) {
 					<img
 						className={styles.star}
 						alt='star'
-						src='/star.svg'
+						src='../../star.svg'
 						loading='lazy'
 					/>{' '}
 					{location.state.rating}
@@ -36,7 +36,14 @@ export default function Details(props) {
 				<p className={styles.description}>
 					{location.state.description}.
 				</p>
-				<button className={styles.addButton} onClick={()=>{props.onAdd(location.state)}}>Add to Cart</button>
+				<button
+					className={styles.addButton}
+					onClick={() => {
+						props.onAdd(location.state);
+					}}
+				>
+					Add to Cart
+				</button>
 			</div>
 		</main>
 	);
