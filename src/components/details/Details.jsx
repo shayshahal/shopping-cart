@@ -25,7 +25,7 @@ export default function Details(props) {
 					<img
 						className={styles.star}
 						alt='star'
-						src='assets/star.svg'
+						src='/assets/star.svg'
 						loading='lazy'
 					/>{' '}
 					{location.state.rating}

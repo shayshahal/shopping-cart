@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {
-	BrowserRouter,
-	Route,
-	Routes
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
-import Details from './components/details/Details.jsx';
 import Home from './components/Home.jsx';
+import Details from './components/details/Details.jsx';
 import Nav from './components/navbar/Nav.jsx';
 import Shop from './components/shop/Shop.jsx';
 // Do lazy loading
@@ -41,7 +37,7 @@ export default function App() {
 	}
 
 	return (
-		<BrowserRouter init basename='/shopping-cart'>
+		<BrowserRouter init>
 			<Nav
 				cartItems={cartItems}
 				setCartItems={setCartItems}
