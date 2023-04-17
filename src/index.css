@@ -1,7 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-	--dark-clr: hsl(152, 100%, 3%);
-	--light-clr: hsl(33, 39%, 95%);
-	--main-clr: hsl(36, 100%, 25%);
+	--dark-clr: black;
+	--light-clr: white;
+	--main-clr: #804d00;
 	--bg-clr: var(--light-clr);
 	--font-clr: var(--dark-clr);
 }
