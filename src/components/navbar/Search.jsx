@@ -9,7 +9,7 @@ export default function Search() {
 	}
 	return (
 		<div
-			className={styles.Search + ' text-start'}
+			className={styles.Search + ' text-start order-last md:order-none'}
 			data-testid='search-container'
 		>
 			<label htmlFor='search' />
