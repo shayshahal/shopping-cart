@@ -11,7 +11,10 @@ export default function Cart(props) {
 	return (
 		<div
 			data-testid='cart-container'
-			className={styles.Cart}
+			className={
+				styles.Cart +
+				' fixed left-3/4 right-0 top-0 z-50 grid h-screen gap-4 bg-white p-4 text-very-dark-blue shadow-2xl'
+			}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
 					e.target.classList.remove(styles.slideOut);
@@ -19,23 +22,23 @@ export default function Cart(props) {
 				}
 			}}
 		>
-			<div className={styles.head}>
+			<div className='flex flex-wrap items-center justify-between border-b-2 border-very-dark-blue py-3'>
 				<button
 					onClick={(e) => {
 						e.target.parentNode.parentNode.classList.add(
 							styles.slideOut
 						);
 					}}
-					className={styles.closeBtn}
+					className='text-5xl'
 					data-testid='close-btn'
 				>
 					☰
 				</button>
-				<span className={styles.cartTitle}>Your Cart</span>
+				<span className='text-5xl font-normal italic'>Your Cart</span>
 			</div>
 			<div
-				className={styles.itemList}
 				data-testid='cart-itemList'
+				className='overflow-auto'
 			>
 				{Object.entries(props.cartItems).length === 0
 					? 'Your cart is empty.'
@@ -75,7 +78,7 @@ export default function Cart(props) {
 					  ))}
 			</div>
 			<button
-				className={styles.checkOutBtn}
+				className='border-2 border-dark-blue font-normal hover:bg-dark-blue hover:text-white'
 				onClick={handleCheckOut}
 			>
 				Checkout

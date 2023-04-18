@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'dark-blue': '#12264a'
+				'dark-blue': '#12264a',
+				'very-dark-blue': '#070912'
 			},
 			backgroundImage: { home: 'url("/assets/wave2.svg")' },
 		},
