@@ -2,4 +2,5 @@
 	color: var(--font-clr);
 	background-color: var(--bg-clr);
 	font-weight: 300;
+	box-shadow: inset 0px -2px 0px 0px currentColor;
 }
