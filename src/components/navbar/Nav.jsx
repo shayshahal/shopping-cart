@@ -1,17 +1,35 @@
 import { NavLink } from 'react-router-dom';
-import styles from '/src/styles/navbar/Nav.module.css';
-import '../../styles/navbar/Nav.css'
-import CartToggle from './cart/CartToggle';
+import '../../styles/navbar/Nav.css';
 import Search from './Search';
+import CartToggle from './cart/CartToggle';
+import styles from '/src/styles/navbar/Nav.module.css';
 
 export default function Nav(props) {
 	return (
-		<nav>
-			<NavLink className={styles.NavLink + ' ' + styles.home} to='/'>Home</NavLink>
-			<NavLink className={styles.NavLink + ' ' + styles.shop} to='/Shop'>Shop</NavLink>
-			<Search data-testid='search'/>
-			<NavLink className={styles.NavLink + ' ' + styles.about} to='/About'>About</NavLink>
-			<CartToggle cartItems={props.cartItems} setCartItems={props.setCartItems}/>
+		<nav className='z-40 flex w-full justify-stretch bg-very-dark-blue text-center text-2xl font-thin italic text-white shadow-2xl'>
+			<NavLink
+				className='flex-1 py-3'
+				to='/'
+			>
+				Home
+			</NavLink>
+			<NavLink
+				className='flex-1 py-3'
+				to='/Shop'
+			>
+				Shop
+			</NavLink>
+			<Search data-testid='search' />
+			<NavLink
+				className='flex-1 py-3'
+				to='/About'
+			>
+				About
+			</NavLink>
+			<CartToggle
+				cartItems={props.cartItems}
+				setCartItems={props.setCartItems}
+			/>
 		</nav>
 	);
 }

@@ -1,5 +1,5 @@
 .Search{
-	grid-area: search;
+	flex: 3;
 }
 input[type='search'] {
 	width: 50%;

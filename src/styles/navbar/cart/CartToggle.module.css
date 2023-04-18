@@ -11,7 +11,7 @@
 	border-radius: inherit;
 }
 .CartContainer {
-	grid-area: cart;
+	flex: 1;
 }
 
 @media (max-width: 700px) {
