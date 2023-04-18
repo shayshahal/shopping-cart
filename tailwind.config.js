@@ -4,10 +4,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'dark-gold': 'hsl(36, 100%, 25%)',
-				'light-gold': '#b9a27f'
+				'dark-blue': '#12264a'
 			},
-			backgroundImage: { home: 'url("/assets/wave.svg")' },
+			backgroundImage: { home: 'url("/assets/wave2.svg")' },
 		},
 	},
 	plugins: [],

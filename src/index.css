@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-	--dark-clr: black;
+	--dark-clr: #070912;
 	--light-clr: white;
-	--main-clr: #804d00;
+	--main-clr: #12264a;
 	--bg-clr: var(--light-clr);
 	--font-clr: var(--dark-clr);
 }
