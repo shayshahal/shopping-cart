@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import '../../styles/navbar/Nav.css';
 import Search from './Search';
 import CartToggle from './cart/CartToggle';
-import styles from '/src/styles/navbar/Nav.module.css';
 
 export default function Nav(props) {
 	return (

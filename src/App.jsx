@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import About from './components/About.jsx';
 import Complete from './components/Complete.jsx';
 import Home from './components/Home.jsx';
 import Details from './components/details/Details.jsx';
@@ -59,10 +58,6 @@ export default function App() {
 				<Route
 					path='/Shop/:title'
 					element={<Details onAdd={addItemToCart} />}
-				/>
-				<Route
-					path='/About'
-					element={<About />}
 				/>
 				<Route
 					path='/Complete'
