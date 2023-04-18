@@ -7,11 +7,11 @@ export default function Home() {
 				'bg-start grid content-center justify-items-center gap-8 bg-home-mobile bg-cover bg-bottom bg-no-repeat text-center lg:bg-home'
 			}
 		>
-			<h1 className='text-5xl font-thin italic lg:text-9xl'>
+			<h1 className='text-5xl font-thin italic md:text-7xl xl:text-9xl'>
 				Shopping Cart
 			</h1>
 			<span
-				className='text-3xl font-thin italic lg:text-5xl'
+				className='text-2xl font-thin italic md:text-4xl xl:text-5xl'
 				data-testid='paragraph'
 			>
 				A project by Shay Shahal, following The Odin Project curriculum.
