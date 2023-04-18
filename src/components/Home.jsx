@@ -2,12 +2,16 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 	return (
-		<main className={'grid content-center justify-items-center gap-8 bg-home bg-no-repeat bg-cover'}>
-			<h1 className='text-9xl font-thin italic'>
+		<main
+			className={
+				'bg-start grid content-center justify-items-center gap-8 bg-home-mobile bg-cover bg-bottom bg-no-repeat text-center lg:bg-home'
+			}
+		>
+			<h1 className='text-5xl font-thin italic lg:text-9xl'>
 				Shopping Cart
 			</h1>
 			<span
-				className='text-5xl font-thin italic'
+				className='text-3xl font-thin italic lg:text-5xl'
 				data-testid='paragraph'
 			>
 				A project by Shay Shahal, following The Odin Project curriculum.

@@ -7,7 +7,7 @@ export default {
 				'dark-blue': '#12264a',
 				'very-dark-blue': '#070912'
 			},
-			backgroundImage: { home: 'url("/assets/wave2.svg")' },
+			backgroundImage: { home: 'url("/assets/wave.svg")', 'home-mobile': 'url("/assets/wave-mobile.svg")' },
 		},
 	},
 	plugins: [],
