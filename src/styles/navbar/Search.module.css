@@ -9,7 +9,7 @@ input[type='search'] {
 	padding: .25em .5em;
 	appearance: none;
 	outline: none;
-	transition: all 0.2s ease;
+	transition: width 0.2s ease;
 }
 input[type='search']:focus {
 	width: 100%;
