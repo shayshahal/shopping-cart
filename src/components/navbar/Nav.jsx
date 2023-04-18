@@ -6,7 +6,7 @@ import styles from '/src/styles/navbar/Nav.module.css';
 
 export default function Nav(props) {
 	return (
-		<nav className='z-40 flex w-full justify-stretch bg-very-dark-blue text-center text-2xl font-thin italic text-white shadow-2xl'>
+		<nav className='z-40 flex flex-col md:flex-row justify-stretch bg-very-dark-blue text-center text-2xl font-thin italic text-white shadow-2xl'>
 			<NavLink
 				className='flex-1 py-3'
 				to='/'
@@ -20,12 +20,6 @@ export default function Nav(props) {
 				Shop
 			</NavLink>
 			<Search data-testid='search' />
-			<NavLink
-				className='flex-1 py-3'
-				to='/About'
-			>
-				About
-			</NavLink>
 			<CartToggle
 				cartItems={props.cartItems}
 				setCartItems={props.setCartItems}
