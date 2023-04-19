@@ -1,8 +1,0 @@
-.ProductList {
-    list-style: none;
-    gap: 2em;
-    padding: 0em 1em;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-auto-rows: 30rem;
-}
