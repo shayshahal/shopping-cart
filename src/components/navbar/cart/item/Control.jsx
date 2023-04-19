@@ -1,5 +1,3 @@
-import styles from '/src/styles/navbar/cart/item/Control.module.css';
-
 export default function Control(props) {
 	return (
 		<div
