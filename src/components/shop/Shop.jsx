@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from '../../styles/shop/Shop.module.css';
+import ProductList from './ProductList';
+import Layout from './controls/Layout';
 import CategoryList from './controls/categories/CategoryList';
 import FilterList from './controls/filters/FilterList';
 import SortList from './controls/sorts/SortList';
-import ProductList from './ProductList';
 
 export default function Shop(props) {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
 	const [activeSort, setActiveSort] = useState('price');
 	const [activeCategories, setActiveCategories] = useState(new Set());
+	const [productLayout, setProductLayout] = useState('Cards') // Card / Blocks
+
 	const [filters, setFilters] = useState({
 		price: { min: 0, max: 100000 },
 		rating: { min: 0, max: 5 },
@@ -65,6 +68,7 @@ export default function Shop(props) {
 	return (
 		<main className={styles.Shop}>
 			<div className={styles.controls}>
+				<Layout layout={productLayout} setLayout={setProductLayout}/>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
@@ -85,6 +89,7 @@ export default function Shop(props) {
 			<ProductList
 				sortedAndFilteredList={sortedAndFilteredList}
 				addProduct={props.addProduct}
+				productLayout={productLayout}
 			/>
 		</main>
 	);
