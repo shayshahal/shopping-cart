@@ -10,7 +10,7 @@ export default function Layout(props) {
 			>
 				<CircumIcon
 					name='grid_4-1'
-					color={(props.layout === 'Cards' ? '#fff' : '#000')}
+					color={(props.layout === 'Cards' ? '#fff' : '#12264a')}
 					size='36px'
 				/>
 				<input
@@ -28,7 +28,7 @@ export default function Layout(props) {
 			>
 				<CircumIcon
 					name='grid_2-h'
-					color={(props.layout === 'Blocks' ? '#fff' : '#000')}
+					color={(props.layout === 'Blocks' ? '#fff' : '#12264a')}
 					size='36px'
 				/>
 				<input
