@@ -22,10 +22,9 @@ export default function CategoryList(props) {
 	}
 
 	return (
-		<ul className='col-span-2 grid grid-cols-2 justify-items-start gap-2'>
-			<h1>Categories:</h1>
+		<ul className='col-span-2 grid grid-cols-2 justify-items-start gap-2 relative'>
 			<button
-				className='justify-self-end'
+				className='absolute bottom-0 right-0'
 				onClick={handleClick}
 				name='reset'
 			>
