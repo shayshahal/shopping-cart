@@ -3,14 +3,14 @@ import CircumIcon from '@klarr-agency/circum-icons-react';
 export default function Layout(props) {
 	const handleClick = (e) => props.setLayout(e.currentTarget.id);
 	return (
-		<div className='grid w-28 grid-cols-2 items-center rounded-full border-2 border-dark-blue'>
+		<div className='grid w-28 grid-cols-2 items-center rounded-full border-2 border-very-dark-blue'>
 			<label
 				htmlFor='Cards'
-				className={'flex justify-center rounded-l-full cursor-pointer' + (props.layout === 'Cards' ? ' bg-dark-blue' : ' ')}
+				className={'flex justify-center rounded-l-full cursor-pointer' + (props.layout === 'Cards' ? ' bg-very-dark-blue' : ' ')}
 			>
 				<CircumIcon
 					name='grid_4-1'
-					color={(props.layout === 'Cards' ? '#fff' : '#12264a')}
+					color={(props.layout === 'Cards' ? '#fff' : '#070912')}
 					size='36px'
 				/>
 				<input
@@ -24,11 +24,11 @@ export default function Layout(props) {
 			</label>
 			<label
 				htmlFor='Blocks'
-				className={'flex justify-center rounded-r-full cursor-pointer' + (props.layout === 'Blocks' ? ' bg-dark-blue' : ' ')}
+				className={'flex justify-center rounded-r-full cursor-pointer' + (props.layout === 'Blocks' ? ' bg-very-dark-blue' : ' ')}
 			>
 				<CircumIcon
 					name='grid_2-h'
-					color={(props.layout === 'Blocks' ? '#fff' : '#12264a')}
+					color={(props.layout === 'Blocks' ? '#fff' : '#070912')}
 					size='36px'
 				/>
 				<input
