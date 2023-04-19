@@ -66,9 +66,8 @@ export default function Shop(props) {
 	}
 
 	return (
-		<main className={styles.Shop}>
-			<div className={styles.controls}>
-				<Layout layout={productLayout} setLayout={setProductLayout}/>
+		<main className=''>
+			<div className='grid p-2 grid-cols-2 '>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
@@ -76,6 +75,7 @@ export default function Shop(props) {
 					isDescending={isDescending}
 					onDirectionChange={setIsDescending}
 				/>
+								<Layout layout={productLayout} setLayout={setProductLayout}/>
 				<CategoryList
 					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}
