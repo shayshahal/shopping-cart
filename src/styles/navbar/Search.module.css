@@ -15,5 +15,4 @@ input[type='search']:focus {
 	width: 100%;
 	background-color: var(--bg-clr);
 	color: var(--font-clr);
-	box-shadow: inset 0px -2px 0px 0px currentColor;
 }
