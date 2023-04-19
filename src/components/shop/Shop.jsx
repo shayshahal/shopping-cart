@@ -12,7 +12,7 @@ export default function Shop(props) {
 	const [isDescending, setIsDescending] = useState(true);
 	const [activeSort, setActiveSort] = useState('dollar');
 	const [activeCategories, setActiveCategories] = useState(new Set());
-	const [productLayout, setProductLayout] = useState('Cards') // Card / Blocks
+	const [productLayout, setProductLayout] = useState('Cards'); // Card / Blocks
 
 	const [filters, setFilters] = useState({
 		price: { min: 0, max: 100000 },
@@ -67,7 +67,7 @@ export default function Shop(props) {
 
 	return (
 		<main className=''>
-			<div className='grid p-2 grid-cols-2 '>
+			<div className='grid grid-cols-2 gap-y-4 p-4'>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
@@ -75,7 +75,10 @@ export default function Shop(props) {
 					isDescending={isDescending}
 					onDirectionChange={setIsDescending}
 				/>
-								<Layout layout={productLayout} setLayout={setProductLayout}/>
+				<Layout
+					layout={productLayout}
+					setLayout={setProductLayout}
+				/>
 				<CategoryList
 					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}

@@ -4,7 +4,7 @@ import SortDirection from './SortDirection';
 export default function SortList(props) {
 	return (
 		<div
-			className='flex justify-evenly'
+			className='flex gap-4'
 			data-testid='sort-list'
 		>
 			<SortDirection
