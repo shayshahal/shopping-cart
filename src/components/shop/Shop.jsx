@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import styles from '../../styles/shop/Shop.module.css';
 import ProductList from './ProductList';
 import Layout from './controls/Layout';
 import CategoryList from './controls/categories/CategoryList';
-import FilterList from './controls/filters/FilterList';
+import Filter from './controls/Filter.jsx';
 import SortList from './controls/sorts/SortList';
 
 export default function Shop(props) {
@@ -15,8 +14,8 @@ export default function Shop(props) {
 	const [productLayout, setProductLayout] = useState('Cards'); // Card / Blocks
 
 	const [filters, setFilters] = useState({
-		price: { min: 0, max: 100000 },
-		rating: { min: 0, max: 5 },
+		dollar: { min: 0, max: 100000 },
+		star: { min: 0, max: 5 },
 	});
 
 	const sortFunctions = {
@@ -83,10 +82,17 @@ export default function Shop(props) {
 					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}
 				/>
-				<FilterList
-					onFilterChange={setFilters}
-					filters={filters}
-				/>
+				{Object.entries(filters).map(([key, value]) => {
+					return (
+						<Filter
+							key={key}
+							name={key}
+							onChange={setFilters}
+							min={value.min}
+							max={value.max}
+						/>
+					);
+				})}
 			</div>
 
 			<ProductList
