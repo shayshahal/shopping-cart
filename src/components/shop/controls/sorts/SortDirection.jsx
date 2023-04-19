@@ -1,27 +1,20 @@
-import styles from '/src/styles/shop/controls/sorts/SortDirection.module.css';
-
 export default function SortDirection(props) {
 	function handleChange() {
 		props.onChange((prev) => !prev);
 	}
 	return (
-		<div
-			className={styles.SortDirection}
-			data-testid='sortDirection-container'
+		<label
+			htmlFor='dirCB'
+			className='rounded-full bg-dark-blue text-white px-4 cursor-pointer'
 		>
-			<label
-				htmlFor='dirCB'
-				className={styles.label}
-			>
-				{props.isDescending ? 'Dsc' : 'Asc'} ⇅
-			</label>
+			{props.isDescending ? 'Dsc' : 'Asc'} ⇅
 			<input
 				type='checkbox'
 				id='dirCB'
 				onChange={handleChange}
-				className={styles.checkbox}
+				className='appearance-none'
 				checked={props.isDescending}
 			/>
-		</div>
+		</label>
 	);
 }
