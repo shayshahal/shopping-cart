@@ -5,9 +5,9 @@ export default function SortDirection(props) {
 	return (
 		<label
 			htmlFor='dirCB'
-			className='rounded-full bg-dark-blue text-white px-4 cursor-pointer'
+			className='rounded-full bg-very-dark-blue text-white px-4 py-2 cursor-pointer'
 		>
-			{props.isDescending ? 'Dsc' : 'Asc'} ⇅
+			⇅
 			<input
 				type='checkbox'
 				id='dirCB'

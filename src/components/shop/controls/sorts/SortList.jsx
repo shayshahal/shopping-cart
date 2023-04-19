@@ -1,11 +1,10 @@
 import Sort from './Sort';
 import SortDirection from './SortDirection';
-import styles from '/src/styles/shop/controls/sorts/SortList.module.css';
 
 export default function SortList(props) {
 	return (
 		<div
-			className={styles.SortList}
+			className='flex'
 			data-testid='sort-list'
 		>
 			<SortDirection

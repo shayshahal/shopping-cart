@@ -1,28 +1,30 @@
-import styles from '/src/styles/shop/controls/sorts/Sort.module.css';
+import CircumIcon from '@klarr-agency/circum-icons-react';
 
 export default function Sort(props) {
 	function handleChange() {
 		props.onClick(props.name);
 	}
 	return (
-		<div
-			className={styles.Sort}
-			data-testid='sort-container'
+		<label
+			htmlFor={props.name}
+			className={
+				'flex cursor-pointer rounded-full border-2 border-very-dark-blue' +
+				(props.isChecked ? ' bg-very-dark-blue' : '')
+			}
 		>
 			<input
 				type='radio'
 				name='radio'
 				id={props.name}
-				className={styles.radio}
+				className='appearance-none'
 				checked={props.isChecked}
 				onChange={handleChange}
 			/>
-			<label
-				htmlFor={props.name}
-				className={styles.label}
-			>
-				{props.name}
-			</label>
-		</div>
+			<CircumIcon
+				name={props.name}
+				color={props.isChecked ? '#fff' : '#070912'}
+				size='36px'
+			/>
+		</label>
 	);
 }

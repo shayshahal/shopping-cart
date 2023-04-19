@@ -10,7 +10,7 @@ import SortList from './controls/sorts/SortList';
 export default function Shop(props) {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
-	const [activeSort, setActiveSort] = useState('price');
+	const [activeSort, setActiveSort] = useState('dollar');
 	const [activeCategories, setActiveCategories] = useState(new Set());
 	const [productLayout, setProductLayout] = useState('Cards') // Card / Blocks
 
@@ -20,21 +20,21 @@ export default function Shop(props) {
 	});
 
 	const sortFunctions = {
-		price: (a, b) => {
+		dollar: (a, b) => {
 			if (isDescending) {
 				return b.price - a.price;
 			} else {
 				return a.price - b.price;
 			}
 		},
-		alphabet: (a, b) => {
+		text: (a, b) => {
 			if (isDescending) {
 				return a.title.localeCompare(b.title);
 			} else {
 				return b.title.localeCompare(a.title);
 			}
 		},
-		rating: (a, b) => {
+		star: (a, b) => {
 			if (isDescending) {
 				return b.rating - a.rating;
 			} else {
