@@ -65,8 +65,8 @@ export default function Shop(props) {
 	}
 
 	return (
-		<main className=''>
-			<div className='grid grid-cols-2 gap-y-4 p-4'>
+		<main className='flex flex-col flex-1 md:flex-row md:overflow-hidden'>
+			<form className='grid border-b-4 grid-cols-2 border-very-dark-blue md:border-b-0 md:border-r-4 md:flex md:flex-col gap-y-4 py-4 md:w-84'>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
@@ -93,7 +93,7 @@ export default function Shop(props) {
 						/>
 					);
 				})}
-			</div>
+			</form>
 
 			<ProductList
 				sortedAndFilteredList={sortedAndFilteredList}

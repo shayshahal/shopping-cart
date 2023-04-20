@@ -4,7 +4,7 @@ import SortDirection from './SortDirection';
 export default function SortList(props) {
 	return (
 		<div
-			className='flex gap-4'
+			className='flex gap-4 items-center md:justify-center'
 			data-testid='sort-list'
 		>
 			<SortDirection

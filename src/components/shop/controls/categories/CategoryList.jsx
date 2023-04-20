@@ -22,7 +22,7 @@ export default function CategoryList(props) {
 	}
 
 	return (
-		<ul className='col-span-2 grid grid-cols-2 justify-items-start gap-2 relative'>
+		<ul className='col-span-2 flex-1 grid grid-cols-3 justify-items-start items-center gap-4 md:gap-0 md:grid-cols-2 relative '>
 			<button
 				className='absolute bottom-0 right-0'
 				onClick={handleClick}
