@@ -98,7 +98,7 @@ export default function Shop(props) {
 			<ProductList
 				sortedAndFilteredList={sortedAndFilteredList}
 				addProduct={props.addProduct}
-				productLayout={productLayout}
+				layout={productLayout}
 			/>
 		</main>
 	);
