@@ -1,3 +1,4 @@
+import CircumIcon from '@klarr-agency/circum-icons-react';
 import { useEffect, useState } from 'react';
 import Category from './Category';
 import styles from '/src/styles/shop/controls/categories/CategoryList.module.css';
@@ -22,13 +23,13 @@ export default function CategoryList(props) {
 	}
 
 	return (
-		<ul className='col-span-2 flex-1 grid grid-cols-3 justify-items-start items-center gap-4 md:gap-0 md:grid-cols-2 relative '>
+		<ul className='relative col-span-2 grid flex-1 grid-cols-3 items-center justify-items-center gap-4 border-y-2 border-very-dark-blue p-2 md:grid-cols-2 md:gap-0 '>
 			<button
-				className='absolute bottom-0 right-0'
+				className='absolute bottom-0.5 right-0 hover:rotate-180 transition-transform'
 				onClick={handleClick}
 				name='reset'
 			>
-				reset
+				<CircumIcon name='redo' />
 			</button>
 			{categoryList.map((category, i) => (
 				<Category

@@ -66,7 +66,7 @@ export default function Shop(props) {
 
 	return (
 		<main className='flex flex-col flex-1 md:flex-row md:overflow-hidden'>
-			<form className='grid border-b-4 grid-cols-2 border-very-dark-blue md:border-b-0 md:border-r-4 md:flex md:flex-col gap-y-4 py-4 md:w-84'>
+			<form onSubmit={(e)=>{e.preventDefault()}} className='grid border-b-4 grid-cols-2 border-very-dark-blue md:border-b-0 md:border-r-4 md:flex md:flex-col gap-y-4 py-4 px-2 md:w-84'>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
