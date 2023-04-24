@@ -8,8 +8,8 @@ export default function Sort(props) {
 		<label
 			htmlFor={props.name}
 			className={
-				'flex cursor-pointer rounded-full border-2 border-very-dark-blue' +
-				(props.isChecked ? ' bg-very-dark-blue' : '')
+				'flex cursor-pointer rounded-full border-2 border-dark-blue' +
+				(props.isChecked ? ' bg-dark-blue' : '')
 			}
 		>
 			<input
