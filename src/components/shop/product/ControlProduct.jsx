@@ -8,7 +8,7 @@ export default function ControlProduct(props) {
 			data-testid='controlProduct-container'
 		>
 						<Link
-				className=' border-dark-blue'
+				className='border-dark-blue transition-transform hover:scale-110'
 				to={`/shop/${props.product.title}`}
 				state={props.product}
 			>
@@ -16,7 +16,7 @@ export default function ControlProduct(props) {
 			</Link>
 			<button
 				onClick={() => props.onAdd(props.product)}
-				className='flex-1 bg-dark-blue text-white rounded-md'
+				className='flex-1 bg-dark-blue text-white rounded-md transition-transform hover:scale-105'
 			>
 				Add to Cart
 			</button>
