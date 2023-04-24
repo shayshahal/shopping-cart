@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductList from './ProductList';
+import Filter from './controls/Filter.jsx';
 import Layout from './controls/Layout';
 import CategoryList from './controls/categories/CategoryList';
-import Filter from './controls/Filter.jsx';
 import SortList from './controls/sorts/SortList';
 
 export default function Shop(props) {
@@ -65,8 +65,13 @@ export default function Shop(props) {
 	}
 
 	return (
-		<main className='flex flex-col flex-1 md:flex-row md:overflow-hidden'>
-			<form onSubmit={(e)=>{e.preventDefault()}} className='grid border-b-4 grid-cols-2 border-very-dark-blue md:border-b-0 md:border-r-4 md:flex md:flex-col gap-y-4 py-4 px-2 md:w-84'>
+		<main className='flex flex-1 flex-col md:flex-row md:overflow-hidden'>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+				}}
+				className='md:w-84 grid grid-cols-2 gap-y-4 border-opacity-10 border-b-4 border-very-dark-blue px-2 py-4 md:flex md:flex-col md:border-b-0 md:border-r-2'
+			>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
