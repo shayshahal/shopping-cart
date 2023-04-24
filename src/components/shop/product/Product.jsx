@@ -5,32 +5,60 @@ export default function Product(props) {
 	return (
 		<li
 			className={
-				'grid rounded-sm border-2 border-dark-blue p-2 shadow-2xl' +
+				'grid gap-x-10 rounded-sm border-2 border-very-dark-blue border-opacity-20 shadow-xl' +
 				' ' +
 				(props.layout === 'Cards'
 					? 'grid-rows-card'
-					: 'grid-cols-2 grid-rows-4 lg:w-3/4')
+					: 'h-3/5 grid-cols-2 grid-rows-block p-4')
 			}
 		>
-			<img
+			<div
 				className={
-					'h-full w-full object-top' +
+					'shadow-sm' +
 					' ' +
 					(props.layout === 'Cards'
-						? ' object-cover'
-						: 'row-span-4 object-contain object-left')
+						? 'border-b-2 border-very-dark-blue border-opacity-10 '
+						: 'row-span-4')
 				}
-				alt={props.product.title + ' image'}
-				src={props.product.thumbnail}
-				loading='lazy'
-			/>
-			<div className='text-xl italic'>{props.product.title}</div>
-			<div className='text-2xl font-extrabold'>
+			>
+				<img
+					className={'h-full w-full object-cover'}
+					alt={props.product.title + ' image'}
+					src={props.product.thumbnail}
+					loading='lazy'
+				/>
+			</div>
+			<div
+				className={
+					'px-2 pt-1 italic' +
+					' ' +
+					(props.layout === 'Cards'
+						? 'text-xl'
+						: 'text-end text-2xl md:text-3xl')
+				}
+			>
+				{props.product.title}
+			</div>
+			<div
+				className={
+					'px-2 font-extrabold' +
+					' ' +
+					(props.layout === 'Cards'
+						? 'text-2xl'
+						: 'text-end text-3xl md:text-4xl')
+				}
+			>
 				{props.product.price.toLocaleString('en-US')}$
 			</div>
-			<div className='flex'>
+			<div
+				className={
+					'flex items-center px-2' +
+					' ' +
+					(props.layout === 'Cards' ? '' : 'justify-end text-xl')
+				}
+			>
 				<img
-					className='w-4'
+					className='h-4'
 					alt='star'
 					src='assets/star.svg'
 					loading='lazy'

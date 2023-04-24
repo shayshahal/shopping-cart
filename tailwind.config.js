@@ -7,13 +7,14 @@ export default {
 				fluid : 'repeat(auto-fit, minmax(16rem, 1fr))'		
 			},
 			gridTemplateRows: {
-				card: '60% min-content min-content min-content 1fr'
+				card: '60% min-content min-content min-content 1fr',
+				block: 'min-content min-content min-content 1fr'
 			},
 			gridAutoRows:{
-				card: '24rem'
+				card: '26rem'
 			},
 			width:{
-				block: 'clamp(32rem, 50%, 80rem)'
+				block: 'clamp(32rem, 75%, 80rem)'
 			},
 			colors: {
 				'dark-blue': '#12264a',

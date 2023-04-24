@@ -5,10 +5,10 @@ function ProductList(props) {
 	return (
 		<ul
 			className={
-				'flex-1 overflow-y-auto gap-4 p-4' + ' ' +
+				'flex-1 overflow-y-auto gap-4 p-8' + ' ' +
 				(props.layout === 'Cards'
 					? 'grid grid-cols-fluid auto-rows-card'
-					: 'flex flex-col items-center')
+					: 'flex flex-col')
 			}
 		>
 			{props.sortedAndFilteredList.map((product) => (
