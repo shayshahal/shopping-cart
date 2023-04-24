@@ -15,14 +15,18 @@ export default function Category(props) {
 		}
 	}
 	return (
-		<li className={'border-2 rounded-full border-very-dark-blue px-2' + (props.isChecked ? ' bg-very-dark-blue text-white': '')}>
+		<li
+			className={
+				'px-2' + ' ' +
+				(props.isChecked ? '' : 'opacity-60')
+			}
+		>
 			<label
 				htmlFor={props.name}
-				className='flex h-full w-full items-center text-center gap-0.5'
+				className='cursor-pointer flex items-center gap-1'
 			>
-				{props.isChecked ? '-' : '+'}
 				<input
-					className='appearance-none'
+					className='accent-dark-blue cursor-pointer'
 					type='checkbox'
 					id={props.name}
 					onChange={handleChange}
