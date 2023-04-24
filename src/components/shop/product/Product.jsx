@@ -5,11 +5,11 @@ export default function Product(props) {
 	return (
 		<li
 			className={
-				'grid gap-x-10 rounded-sm border-2 border-very-dark-blue border-opacity-10 shadow-xl' +
+				'grid gap-x-10 rounded-sm border-2 border-very-dark-blue shadow-xl' +
 				' ' +
 				(props.layout === 'Cards'
-					? 'grid-rows-card'
-					: 'h-3/5 grid-cols-2 grid-rows-block p-4')
+					? 'grid-rows-card border-opacity-10'
+					: 'h-3/5 grid-cols-2 grid-rows-block p-4 border-opacity-30')
 			}
 		>
 			<div
