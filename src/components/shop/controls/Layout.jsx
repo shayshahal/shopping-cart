@@ -3,12 +3,13 @@ import CircumIcon from '@klarr-agency/circum-icons-react';
 export default function Layout(props) {
 	const handleClick = (e) => props.setLayout(e.currentTarget.id);
 	return (
-		<div className='grid grid-cols-2 items-center rounded-full border-2 border-dark-blue md:-order-1'>
+		<div className='grid grid-cols-2 items-center rounded-full border-2 border-dark-blue'>
 			<label
 				htmlFor='Cards'
 				className={
-					'flex cursor-pointer justify-center rounded-l-full' +
-					(props.layout === 'Cards' ? ' bg-dark-blue' : '')
+					'flex cursor-pointer justify-center rounded-l-full  transition-transform focus-within:scale-105 hover:scale-105' +
+					' ' +
+					(props.layout === 'Cards' ? 'bg-dark-blue' : '')
 				}
 			>
 				<CircumIcon
@@ -28,8 +29,9 @@ export default function Layout(props) {
 			<label
 				htmlFor='Blocks'
 				className={
-					'flex cursor-pointer justify-center rounded-r-full' +
-					(props.layout === 'Blocks' ? ' bg-dark-blue' : '')
+					'flex cursor-pointer justify-center rounded-r-full transition-transform focus-within:scale-105 hover:scale-105' +
+					' ' +
+					(props.layout === 'Blocks' ? 'bg-dark-blue' : '')
 				}
 			>
 				<CircumIcon

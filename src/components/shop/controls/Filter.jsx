@@ -15,10 +15,15 @@ export default function Filter(props) {
 			className='flex gap-2 justify-self-start'
 			data-testid='filter-container'
 		>
-			<legend className='float-left'><CircumIcon name={props.name}/></legend>
-			<label htmlFor='min' className='w-24 border-2 rounded-full ps-2 border-very-dark-blue'>
+			<legend className='float-left'>
+				<CircumIcon name={props.name} />
+			</legend>
+			<label
+				htmlFor='min'
+				className='w-full rounded-full border-2 border-very-dark-blue'
+			>
 				<input
-					className='w-full h-full'
+					className='h-full w-full ps-2'
 					type='number'
 					name='min'
 					id='min'
@@ -28,9 +33,12 @@ export default function Filter(props) {
 				/>
 			</label>
 			-
-			<label htmlFor='max' className='w-24 border-2 rounded-full ps-2 border-very-dark-blue'>
+			<label
+				htmlFor='max'
+				className='w-full rounded-full border-2 border-dark-blue'
+			>
 				<input
-					className='w-full h-full'
+					className='h-full w-full ps-2 '
 					type='number'
 					name='max'
 					id='max'
