@@ -70,18 +70,18 @@ export default function Shop(props) {
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
-				className='md:w-84 grid grid-cols-2 gap-y-4 border-opacity-10 border-b-4 border-very-dark-blue px-2 py-4 md:flex md:flex-col md:border-b-0 md:border-r-2'
+				className='md:w-1/3 lg:w-1/4 xl:w-1/5 grid grid-cols-2 gap-y-4 border-opacity-10 border-b-4 border-very-dark-blue px-2 py-4 md:flex md:flex-col md:border-b-0 md:border-r-2'
 			>
+								<Layout
+					layout={productLayout}
+					setLayout={setProductLayout}
+				/>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
 					onSortChange={setActiveSort}
 					isDescending={isDescending}
 					onDirectionChange={setIsDescending}
-				/>
-				<Layout
-					layout={productLayout}
-					setLayout={setProductLayout}
 				/>
 				<CategoryList
 					onCategoryClick={setActiveCategories}
