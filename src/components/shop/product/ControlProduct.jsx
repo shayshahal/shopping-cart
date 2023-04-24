@@ -1,25 +1,26 @@
+import CircumIcons from '@klarr-agency/circum-icons-react';
 import { Link } from 'react-router-dom';
 import styles from '/src/styles/shop/product/ControlProduct.module.css';
-import CircumIcons from '@klarr-agency/circum-icons-react'
 export default function ControlProduct(props) {
 	return (
 		<div
-			className='flex justify-between gap-2 self-end'
+			className='flex justify-between gap-2 self-end p-2'
 			data-testid='controlProduct-container'
 		>
-			<button
-				onClick={() => props.onAdd(props.product)}
-				className='flex-1 border-dark-blue border-2 hover:bg-dark-blue hover:text-white'
-			>
-				Add to Cart
-			</button>
-			<Link
-				className='border-dark-blue border-2'
+						<Link
+				className=' border-dark-blue'
 				to={`/shop/${props.product.title}`}
 				state={props.product}
 			>
-				<CircumIcons name='circle_info'/>
+				<CircumIcons name='circle_info' color='#070912'/>
 			</Link>
+			<button
+				onClick={() => props.onAdd(props.product)}
+				className='flex-1 bg-dark-blue text-white rounded-md'
+			>
+				Add to Cart
+			</button>
+
 		</div>
 	);
 }
