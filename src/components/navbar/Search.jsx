@@ -1,5 +1,4 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import styles from '/src/styles/navbar/Search.module.css';
 
 export default function Search() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -8,13 +7,14 @@ export default function Search() {
 		setSearchParams({ q: e.target.value }, { replace: true });
 	}
 	return (
-		<div
-			className={styles.Search + ' text-start order-last md:order-none'}
+		<label
+			className='text-start md:flex-5 order-last md:order-none'
+			htmlFor='search'
 			data-testid='search-container'
 		>
-			<label htmlFor='search' />
 			<input
 				placeholder='Search here...'
+				className='w-1/2 h-full text-3xl py-1 px-4 transition-all focus:w-full outline-none'
 				type='search'
 				name='search'
 				id='search'
@@ -24,6 +24,6 @@ export default function Search() {
 				}}
 				autoComplete='off'
 			/>
-		</div>
+		</label>
 	);
 }
