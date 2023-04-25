@@ -3,7 +3,7 @@ import Control from './Control';
 export default function Item(props) {
 	return (
 		<div
-			className='grid grid-cols-2 grid-rows-item gap-x-4 border-b-2 border-dark-blue p-2 pt-4'
+			className='grid grid-cols-2 grid-rows-item gap-x-4 border-b-2 border-dark-blue p-2'
 			data-testid='item-container'
 		>
 			<img
