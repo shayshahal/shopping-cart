@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from '../../styles/shop/ProductList.module.css';
-import Product from './product/Product';
+import Product from './Product';
 function ProductList(props) {
 	return (
 		<ul

@@ -1,5 +1,0 @@
-.Item{
-    border-bottom:1px solid currentColor;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr auto;
-}
