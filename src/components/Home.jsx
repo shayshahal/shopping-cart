@@ -1,5 +1,5 @@
+import CircumIcon from '@klarr-agency/circum-icons-react';
 import { Link } from 'react-router-dom';
-
 export default function Home() {
 	return (
 		<main
@@ -22,6 +22,25 @@ export default function Home() {
 			>
 				Go to Shop →
 			</Link>
+			<p className='absolute bottom-1 left-2 text-xl font-thin italic text-white'>
+				© Shay Shahal
+			</p>
+			<div className='absolute bottom-1 right-2 flex h-9 gap-2'>
+				<a
+					className='cursor-pointer hover:scale-110 transition-transform'
+					href='#'
+					target='_blank'
+				>
+					<CircumIcon
+						name='linkedin'
+						color='#fff'
+						size='36px'
+					/>
+				</a>
+				<a className='cursor-pointer hover:scale-110 transition-transform'>
+					<img src='/assets/github-mark-white.svg' className='h-full py-1' alt='github link'/>
+				</a>
+			</div>
 		</main>
 	);
 }
