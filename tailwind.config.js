@@ -8,7 +8,8 @@ export default {
 			},
 			gridTemplateRows: {
 				card: '60% min-content min-content min-content 1fr',
-				block: 'min-content min-content min-content 1fr'
+				block: 'min-content min-content min-content 1fr',
+				item: 'min-content 1fr min-content'
 			},
 			gridAutoRows:{
 				card: '26rem'
@@ -21,6 +22,9 @@ export default {
 				'very-dark-blue': '#070912'
 			},
 			backgroundImage: { home: 'url("/assets/wave.svg")', 'home-mobile': 'url("/assets/wave-mobile.svg")' },
+			flex:{
+				5: '5'
+			}
 		},
 	},
 	plugins: [],
