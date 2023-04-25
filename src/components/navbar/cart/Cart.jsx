@@ -13,7 +13,7 @@ export default function Cart(props) {
 			data-testid='cart-container'
 			className={
 				styles.Cart +
-				' fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4'
+				'fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4'
 			}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
@@ -38,7 +38,7 @@ export default function Cart(props) {
 			</div>
 			<div
 				data-testid='cart-itemList'
-				className='overflow-auto grid grid-flow-row auto-rows-auto'
+				className='grid grid-flow-row auto-rows-auto overflow-auto'
 			>
 				{Object.entries(props.cartItems).length === 0
 					? 'Your cart is empty.'
