@@ -77,7 +77,7 @@ export default function Product(props) {
 			</div>
 			<button
 				onClick={() => props.addProduct(props.product)}
-				className='self-end rounded-md bg-dark-blue py-2 text-white transition-transform hover:scale-105'
+				className='self-end rounded-b-md bg-dark-blue py-2 text-white transition-transform hover:scale-105'
 			>
 				Add to Cart
 			</button>
