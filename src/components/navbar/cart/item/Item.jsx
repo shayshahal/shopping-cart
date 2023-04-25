@@ -1,10 +1,9 @@
 import Control from './Control';
-import styles from '/src/styles/navbar/cart/item/Item.module.css';
 
 export default function Item(props) {
 	return (
 		<div
-			className='grid gap-x-4 p-2 pt-4 border-dark-blue border-b-2'
+			className='grid gap-x-4 p-2 pt-4 border-dark-blue border-b-2 grid-cols-2 grid-rows-item'
 			data-testid='item-container'
 		>
 			<img
