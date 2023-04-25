@@ -20,7 +20,7 @@ export default function Filter(props) {
 			</legend>
 			<label
 				htmlFor='min'
-				className='w-full rounded-full border-2 border-very-dark-blue'
+				className='w-full rounded-full border-2 border-dark-blue'
 			>
 				<input
 					className='h-full w-full ps-2'
