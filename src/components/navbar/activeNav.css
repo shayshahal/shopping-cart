@@ -1,0 +1,5 @@
+.active {
+	color: var(--font-clr);
+	background-color: var(--bg-clr);
+	font-weight: 300;
+}
