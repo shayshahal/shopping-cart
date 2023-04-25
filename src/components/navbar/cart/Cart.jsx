@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Item from './item/Item';
-import styles from '/src/styles/navbar/cart/Cart.module.css';
+import styles from './CartAnimation.module.css';
 
 export default function Cart(props) {
 	const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function Cart(props) {
 			data-testid='cart-container'
 			className={
 				styles.Cart +
-				' fixed left-0 right-0 top-0 z-50 grid h-screen md:left-2/4 xl:left-3/4 gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl'
+				' fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4'
 			}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
@@ -38,7 +38,7 @@ export default function Cart(props) {
 			</div>
 			<div
 				data-testid='cart-itemList'
-				className='overflow-auto'
+				className='overflow-auto grid grid-flow-row auto-rows-auto'
 			>
 				{Object.entries(props.cartItems).length === 0
 					? 'Your cart is empty.'
@@ -78,7 +78,7 @@ export default function Cart(props) {
 					  ))}
 			</div>
 			<button
-				className='border-2 border-dark-blue font-normal hover:bg-dark-blue hover:text-white'
+				className='mt-auto border-2 border-dark-blue py-4 font-normal hover:bg-dark-blue hover:text-white'
 				onClick={handleCheckOut}
 			>
 				Checkout
