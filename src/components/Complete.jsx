@@ -5,24 +5,28 @@ export default function Complete() {
 	const location = useLocation();
 	console.log(location.state);
 	return (
-		<main className={styles.Complete}>
-			<h1 className={styles.thanks}>Thank you for purchasing in our site!</h1>
-			<div className={styles.itemList}>
-				{Object.entries(location.state).map(([k, v]) => 
-					(<div
+		<main>
+			<h1 className='px-16 py-8 text-center text-7xl font-thin italic'>
+				Thank you for purchasing in our site!
+			</h1>
+			<div className='grid grid-cols-2 gap-8 px-8 text-end'>
+				{Object.entries(location.state).map(([k, v]) => (
+					<div
 						key={k}
-						className={styles.item}
+						className='grid h-72 grid-cols-2 grid-rows-block border-2 border-dark-blue pe-2 shadow-xl'
 					>
 						<img
 							alt={v[0].title}
 							src={v[0].thumbnail}
-							className={styles.itemImage}
+							className='row-span-4 h-full w-full object-contain'
 						/>
-						<h3 className={styles.itemName}>{v[0].title}</h3>
-						<div className={styles.itemPrice}>
+						<h3 className='pt-2 text-3xl italic'>{v[0].title}</h3>
+						<div className='text-4xl'>
 							{v[0].price.toLocaleString('en-US')}$
 						</div>
-						<div className={styles.itemAmount}>Amount: {v[1]}</div>
+						<div className='row-span-2 self-end pb-2'>
+							Amount: {v[1]}
+						</div>
 					</div>
 				))}
 			</div>
