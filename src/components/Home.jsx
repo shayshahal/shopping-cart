@@ -27,7 +27,7 @@ export default function Home() {
 			</p>
 			<div className='absolute bottom-1 right-2 flex h-9 gap-2'>
 				<a
-					className='cursor-pointer hover:scale-110 transition-transform'
+					className='cursor-pointer transition-transform hover:scale-110'
 					href='#'
 					target='_blank'
 				>
@@ -37,8 +37,12 @@ export default function Home() {
 						size='36px'
 					/>
 				</a>
-				<a className='cursor-pointer hover:scale-110 transition-transform'>
-					<img src='/assets/github-mark-white.svg' className='h-full py-1' alt='github link'/>
+				<a className='cursor-pointer transition-transform hover:scale-110'>
+					<img
+						src='/assets/github-mark-white.svg'
+						className='h-full py-1'
+						alt='github link'
+					/>
 				</a>
 			</div>
 		</main>

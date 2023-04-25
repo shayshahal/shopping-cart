@@ -1,23 +1,23 @@
-.Cart{
-    animation: slideIn .2s ease;
+.Cart {
+	animation: slideIn 0.2s ease;
 }
 
 @keyframes slideIn {
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(0%);
-    }
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
 }
-.slideOut{
-    animation: slideOut .2s ease;
+.slideOut {
+	animation: slideOut 0.2s ease;
 }
 @keyframes slideOut {
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translateX(100%);
-    }
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(100%);
+	}
 }

@@ -4,9 +4,10 @@ function ProductList(props) {
 	return (
 		<ul
 			className={
-				'flex-1 overflow-y-auto gap-8 p-8' + ' ' +
+				'flex-1 gap-8 overflow-y-auto p-8' +
+				' ' +
 				(props.layout === 'Cards'
-					? 'grid grid-cols-fluid auto-rows-card'
+					? 'grid auto-rows-card grid-cols-fluid'
 					: 'flex flex-col')
 			}
 		>

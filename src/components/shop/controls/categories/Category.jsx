@@ -15,18 +15,13 @@ export default function Category(props) {
 		}
 	}
 	return (
-		<li
-			className={
-				'px-2' + ' ' +
-				(props.isChecked ? '' : 'opacity-60')
-			}
-		>
+		<li className={'px-2' + ' ' + (props.isChecked ? '' : 'opacity-60')}>
 			<label
 				htmlFor={props.name}
-				className='cursor-pointer flex items-center gap-1'
+				className='flex cursor-pointer items-center gap-1'
 			>
 				<input
-					className='accent-dark-blue cursor-pointer'
+					className='cursor-pointer accent-dark-blue'
 					type='checkbox'
 					id={props.name}
 					onChange={handleChange}

@@ -28,7 +28,10 @@ export default function CategoryList(props) {
 				onClick={handleClick}
 				name='reset'
 			>
-				<CircumIcon name='redo' color='#12264a'/>
+				<CircumIcon
+					name='redo'
+					color='#12264a'
+				/>
 			</button>
 			{categoryList.map((category, i) => (
 				<Category

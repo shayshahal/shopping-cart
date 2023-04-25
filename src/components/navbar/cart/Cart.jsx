@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Item from './item/Item';
 import styles from './CartAnimation.module.css';
+import Item from './item/Item';
 
 export default function Cart(props) {
 	const navigate = useNavigate();

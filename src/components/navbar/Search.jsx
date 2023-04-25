@@ -8,13 +8,13 @@ export default function Search() {
 	}
 	return (
 		<label
-			className='text-start md:flex-5 order-last md:order-none'
+			className='order-last text-start md:order-none md:flex-5'
 			htmlFor='search'
 			data-testid='search-container'
 		>
 			<input
 				placeholder='Search here...'
-				className='w-1/2 h-full text-3xl py-1 px-4 transition-all focus:w-full outline-none'
+				className='h-full w-1/2 px-4 py-1 text-3xl outline-none transition-all focus:w-full'
 				type='search'
 				name='search'
 				id='search'

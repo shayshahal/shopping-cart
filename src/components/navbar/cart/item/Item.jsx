@@ -3,7 +3,7 @@ import Control from './Control';
 export default function Item(props) {
 	return (
 		<div
-			className='grid gap-x-4 p-2 pt-4 border-dark-blue border-b-2 grid-cols-2 grid-rows-item'
+			className='grid grid-cols-2 grid-rows-item gap-x-4 border-b-2 border-dark-blue p-2 pt-4'
 			data-testid='item-container'
 		>
 			<img
@@ -12,7 +12,7 @@ export default function Item(props) {
 				className='row-span-2 object-contain'
 			/>
 			<h3 className='text-end italic'>{props.item.title}</h3>
-			<p className='text-end font-medium pb-4'>
+			<p className='pb-4 text-end font-medium'>
 				{props.item.price.toLocaleString('en-US')}$
 			</p>
 			<Control
