@@ -12,8 +12,9 @@ export default function Cart(props) {
 		<div
 			data-testid='cart-container'
 			className={
-				styles.Cart +
-				'fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4'
+				'fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4' +
+				' ' +
+				styles.Cart
 			}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
