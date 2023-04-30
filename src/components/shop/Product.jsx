@@ -4,7 +4,7 @@ export default function Product(props) {
 	return (
 		<li
 			className={
-				'grid gap-x-10 rounded-sm border-2 border-very-dark-blue shadow-xl' +
+				'grid gap-x-10 rounded-md border-2 border-very-dark-blue shadow-xl' +
 				' ' +
 				(props.layout === 'Cards'
 					? 'grid-rows-card border-opacity-10'
