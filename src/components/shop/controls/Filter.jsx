@@ -16,7 +16,7 @@ export default function Filter(props) {
 			data-testid='filter-container'
 		>
 			<legend className='float-left'>
-				<CircumIcon name={props.name} />
+				<CircumIcon name={props.name==='price'?'dollar':'star'} />
 			</legend>
 			<label
 				htmlFor='min'

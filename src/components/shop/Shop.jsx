@@ -14,8 +14,8 @@ export default function Shop(props) {
 	const [productLayout, setProductLayout] = useState('Cards'); // Card / Blocks
 
 	const [filters, setFilters] = useState({
-		dollar: { min: 0, max: 100000 },
-		star: { min: 0, max: 5 },
+		price: { min: 0, max: 100000 },
+		rating: { min: 0, max: 5 },
 	});
 
 	const sortFunctions = {
@@ -70,9 +70,9 @@ export default function Shop(props) {
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
-				className='md:w-1/3 lg:w-1/4 xl:w-1/5 grid grid-cols-2 gap-y-4 border-opacity-10 border-b-4 border-very-dark-blue px-2 py-4 md:flex md:flex-col md:border-b-0 md:border-r-2'
+				className='grid grid-cols-2 gap-y-4 border-b-4 border-very-dark-blue border-opacity-10 px-2 py-4 md:flex md:w-1/3 md:flex-col md:border-b-0 md:border-r-2 lg:w-1/4 xl:w-1/5'
 			>
-								<Layout
+				<Layout
 					layout={productLayout}
 					setLayout={setProductLayout}
 				/>
