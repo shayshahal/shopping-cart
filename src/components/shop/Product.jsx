@@ -8,7 +8,7 @@ export default function Product(props) {
 				' ' +
 				(props.layout === 'Cards'
 					? 'grid-rows-card border-opacity-10'
-					: 'h-3/5 grid-cols-2 grid-rows-block border-opacity-30 p-4')
+					: 'h-3/6 grid-cols-2 grid-rows-block border-opacity-30 p-4')
 			}
 		>
 			<div
