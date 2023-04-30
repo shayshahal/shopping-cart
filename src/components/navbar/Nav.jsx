@@ -1,6 +1,5 @@
 import CircumIcon from '@klarr-agency/circum-icons-react';
 import { NavLink } from 'react-router-dom';
-import Search from './Search';
 import './activeNav.css';
 import CartToggle from './cart/CartToggle';
 
@@ -19,7 +18,7 @@ export default function Nav(props) {
 			>
 				<CircumIcon name='shop' />
 			</NavLink>
-			<Search data-testid='search' />
+			<div className='flex-5'></div> {/*space between sections*/}
 			<CartToggle
 				cartItems={props.cartItems}
 				setCartItems={props.setCartItems}

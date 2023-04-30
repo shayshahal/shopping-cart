@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductList from './ProductList';
+import Search from './Search';
 import Filter from './controls/Filter.jsx';
 import Layout from './controls/Layout';
 import CategoryList from './controls/categories/CategoryList';
 import SortList from './controls/sorts/SortList';
-
 export default function Shop(props) {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
@@ -99,12 +99,14 @@ export default function Shop(props) {
 					);
 				})}
 			</form>
-
-			<ProductList
-				sortedAndFilteredList={sortedAndFilteredList}
-				addProduct={props.addProduct}
-				layout={productLayout}
-			/>
+			<div className='flex-1 flex flex-col'>
+				<Search />
+				<ProductList
+					sortedAndFilteredList={sortedAndFilteredList}
+					addProduct={props.addProduct}
+					layout={productLayout}
+				/>
+			</div>
 		</main>
 	);
 }

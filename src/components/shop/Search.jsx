@@ -8,20 +8,17 @@ export default function Search() {
 	}
 	return (
 		<label
-			className='order-last text-start md:order-none md:flex-5'
+			className='flex h-20 border-b-2 transition-all focus-within:h-32'
 			htmlFor='search'
 			data-testid='search-container'
 		>
 			<input
 				placeholder='Search here...'
-				className='h-full w-1/2 px-4 py-1 text-3xl outline-none transition-all focus:w-full'
+				className='px-8 py-1 text-3xl outline-none'
 				type='search'
 				name='search'
 				id='search'
 				onChange={handleSearch}
-				onFocus={() => {
-					navigate('/Shop');
-				}}
 				autoComplete='off'
 			/>
 		</label>
