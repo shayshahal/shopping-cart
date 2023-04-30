@@ -9,12 +9,12 @@ export default function CartToggle(props) {
 	}
 	return (
 		<div
-			className='fixed bottom-10 right-10 grid h-20 w-20 place-content-stretch rounded-full bg-dark-blue shadow-2xl md:relative md:bottom-auto md:right-auto md:clear-left md:h-full md:w-full md:flex-1 md:rounded-none'
+			className='fixed bottom-10 right-10 grid h-20 w-20 place-content-stretch border-2 md:border-none border-very-dark-blue bg-dark-blue shadow-2xl md:relative md:bottom-auto md:right-auto md:clear-left md:h-full md:w-full md:flex-1'
 			data-testid='cartToggle-container'
 		>
 			<button
 				onClick={toggleCart}
-				className='relative grid h-full w-full place-content-center md:rounded-none'
+				className='relative grid h-full w-full place-content-center'
 				data-testid='cartToggle-button'
 			>
 				{' '}
