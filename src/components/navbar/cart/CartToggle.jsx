@@ -14,15 +14,22 @@ export default function CartToggle(props) {
 		>
 			<button
 				onClick={toggleCart}
-				className='grid h-full w-full place-content-center md:rounded-none'
+				className='relative grid h-full w-full place-content-center md:rounded-none'
 				data-testid='cartToggle-button'
 			>
 				{' '}
-				<CircumIcon
-					name='shopping_cart'
-					color='#fff'
-					size='48px'
-				/>
+				<div className='relative'>
+					<CircumIcon
+						name='shopping_cart'
+						color='#fff'
+						size='48px'
+					/>{' '}
+					{Object.entries(props.cartItems).length > 0 && (
+						<span className='absolute right-1/2 top-1/2 flex h-5 w-5 items-center justify-center rounded-full bg-white text-center text-xl font-bold text-very-dark-blue'>
+							{Object.entries(props.cartItems).length}
+						</span>
+					)}
+				</div>
 			</button>
 
 			{isCartShowing && (
