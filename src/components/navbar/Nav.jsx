@@ -1,17 +1,28 @@
+import CircumIcon from '@klarr-agency/circum-icons-react';
 import { NavLink } from 'react-router-dom';
-import styles from '/src/styles/navbar/Nav.module.css';
-import '../../styles/navbar/Nav.css'
+import './activeNav.css';
 import CartToggle from './cart/CartToggle';
-import Search from './Search';
 
 export default function Nav(props) {
 	return (
-		<nav>
-			<NavLink className={styles.NavLink + ' ' + styles.home} to='/'>Home</NavLink>
-			<NavLink className={styles.NavLink + ' ' + styles.shop} to='/Shop'>Shop</NavLink>
-			<Search data-testid='search'/>
-			<NavLink className={styles.NavLink + ' ' + styles.about} to='/About'>About</NavLink>
-			<CartToggle cartItems={props.cartItems} setCartItems={props.setCartItems}/>
+		<nav className='opa z-40 flex flex-col justify-stretch bg-very-dark-blue text-center text-2xl font-thin italic text-white shadow-2xl md:flex-row'>
+			<NavLink
+				className='flex flex-1 justify-center py-3'
+				to='/'
+			>
+				<CircumIcon name='home' />
+			</NavLink>
+			<NavLink
+				className='flex flex-1 justify-center py-3'
+				to='/Shop'
+			>
+				<CircumIcon name='shop' />
+			</NavLink>
+			<div className='flex-5'></div> {/*space between sections*/}
+			<CartToggle
+				cartItems={props.cartItems}
+				setCartItems={props.setCartItems}
+			/>
 		</nav>
 	);
 }

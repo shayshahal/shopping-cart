@@ -1,35 +1,36 @@
-import styles from '/src/styles/navbar/cart/item/Control.module.css';
-
 export default function Control(props) {
 	return (
 		<div
-			className={styles.Control}
+			className='col-span-2 flex items-center justify-between pt-4 font-normal
+			'
 			data-testid='control-container'
 		>
-			<span className={styles.amountControl}>
+			<div className='h-9 '>
 				<button
 					onClick={props.onDecrement}
-					className={styles.amountBtn}
+					className='h-full w-9 border-2 border-dark-blue'
 				>
 					{'-'}
 				</button>
 				<input
 					type='number'
 					min={1}
-					onChange={props.onChange}
+					onChange={(e) => {
+						if (e.currentTarget.value > 0) props.onChange;
+					}}
 					value={props.amount}
-					className={styles.amountInput}
+					className='mx-2 h-full w-32 border-dark-blue bg-dark-blue text-center text-white'
 				/>
 				<button
 					onClick={props.onIncrement}
-					className={styles.amountBtn}
+					className='h-full w-9 border-2 border-dark-blue'
 				>
 					{'+'}
 				</button>
-			</span>
+			</div>
 			<button
 				onClick={props.onDelete}
-				className={styles.dltBtn}
+				className=''
 			>
 				Delete
 			</button>

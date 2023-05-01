@@ -1,5 +1,4 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import styles from '/src/styles/navbar/Search.module.css';
 
 export default function Search() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -8,22 +7,20 @@ export default function Search() {
 		setSearchParams({ q: e.target.value }, { replace: true });
 	}
 	return (
-		<div
-			className={styles.Search}
+		<label
+			className='flex h-20 border-b-2 transition-all focus-within:h-32'
+			htmlFor='search'
 			data-testid='search-container'
 		>
-			<label htmlFor='search' />
 			<input
 				placeholder='Search here...'
+				className='px-8 py-1 text-3xl outline-none'
 				type='search'
 				name='search'
 				id='search'
 				onChange={handleSearch}
-				onFocus={() => {
-					navigate('/Shop');
-				}}
 				autoComplete='off'
 			/>
-		</div>
+		</label>
 	);
 }

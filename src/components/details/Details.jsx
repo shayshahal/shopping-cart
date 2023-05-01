@@ -1,43 +1,44 @@
 import { useLocation } from 'react-router-dom';
-import styles from '../../styles/details/Details.module.css';
 import ProductGallery from './ProductGallery';
 
 export default function Details(props) {
 	const location = useLocation();
 	return (
-		<main className={styles.Details}>
+		<main className='grid gap-16 bg-auto p-12 md:grid-flow-col md:grid-cols-2'>
 			<ProductGallery images={location.state.images} />
-			<div className={styles.productDetails}>
-				<div className={styles.title}>{location.state.title}</div>
-				<div className={styles.price}>
+			<div className='flex flex-col'>
+				<div className='py-4 text-7xl font-thin italic'>
+					{location.state.title}
+				</div>
+				<div className='text-5xl'>
 					{(~~(
 						(location.state.price *
 							(100 - location.state.discountPercentage)) /
 						100
 					)).toLocaleString('en-US')}
 					{'$ '}
-					<span className={styles.discount}>
+					<span className='text-3xl text-dark-blue line-through decoration-dark-blue '>
 						{location.state.price.toLocaleString('en-US')}$
 					</span>
 				</div>
-				<div className={styles.rating}>
+				<div className='flex items-center gap-1 text-2xl'>
 					{' '}
 					<img
-						className={styles.star}
+						className='inline-block h-4'
 						alt='star'
 						src='/assets/star.svg'
 						loading='lazy'
 					/>{' '}
 					{location.state.rating}
 				</div>
-				<div className={styles.stock}>
+				<div className='text-xl'>
 					Amount left: {location.state.stock}
 				</div>
-				<p className={styles.description}>
+				<p className='w-3/4 break-words py-4 text-2xl'>
 					{location.state.description}.
 				</p>
 				<button
-					className={styles.addButton}
+					className='mt-auto self-end border-2 border-dark-blue px-16 py-4 text-3xl font-bold text-dark-blue hover:bg-dark-blue hover:text-white'
 					onClick={() => {
 						props.onAdd(location.state);
 					}}

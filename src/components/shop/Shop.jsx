@@ -1,37 +1,39 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import styles from '../../styles/shop/Shop.module.css';
-import CategoryList from './controls/categories/CategoryList';
-import FilterList from './controls/filters/FilterList';
-import SortList from './controls/sorts/SortList';
 import ProductList from './ProductList';
-
+import Search from './Search';
+import Filter from './controls/Filter.jsx';
+import Layout from './controls/Layout';
+import CategoryList from './controls/categories/CategoryList';
+import SortList from './controls/sorts/SortList';
 export default function Shop(props) {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
-	const [activeSort, setActiveSort] = useState('price');
+	const [activeSort, setActiveSort] = useState('dollar');
 	const [activeCategories, setActiveCategories] = useState(new Set());
+	const [productLayout, setProductLayout] = useState('Cards'); // Card / Blocks
+
 	const [filters, setFilters] = useState({
 		price: { min: 0, max: 100000 },
 		rating: { min: 0, max: 5 },
 	});
 
 	const sortFunctions = {
-		price: (a, b) => {
+		dollar: (a, b) => {
 			if (isDescending) {
 				return b.price - a.price;
 			} else {
 				return a.price - b.price;
 			}
 		},
-		alphabet: (a, b) => {
+		text: (a, b) => {
 			if (isDescending) {
 				return a.title.localeCompare(b.title);
 			} else {
 				return b.title.localeCompare(a.title);
 			}
 		},
-		rating: (a, b) => {
+		star: (a, b) => {
 			if (isDescending) {
 				return b.rating - a.rating;
 			} else {
@@ -63,8 +65,17 @@ export default function Shop(props) {
 	}
 
 	return (
-		<main className={styles.Shop}>
-			<div className={styles.controls}>
+		<main className='flex flex-1 flex-col md:flex-row md:overflow-hidden'>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+				}}
+				className='grid grid-cols-2 gap-y-4 border-b-4 border-very-dark-blue border-opacity-10 px-2 py-4 md:flex md:w-1/3 md:flex-col md:border-b-0 md:border-r-2 lg:w-1/4 xl:w-1/5'
+			>
+				<Layout
+					layout={productLayout}
+					setLayout={setProductLayout}
+				/>
 				<SortList
 					sortFunctions={sortFunctions}
 					checked={activeSort}
@@ -76,16 +87,26 @@ export default function Shop(props) {
 					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}
 				/>
-				<FilterList
-					onFilterChange={setFilters}
-					filters={filters}
+				{Object.entries(filters).map(([key, value]) => {
+					return (
+						<Filter
+							key={key}
+							name={key}
+							onChange={setFilters}
+							min={value.min}
+							max={value.max}
+						/>
+					);
+				})}
+			</form>
+			<div className='flex-1 flex flex-col'>
+				<Search />
+				<ProductList
+					sortedAndFilteredList={sortedAndFilteredList}
+					addProduct={props.addProduct}
+					layout={productLayout}
 				/>
 			</div>
-
-			<ProductList
-				sortedAndFilteredList={sortedAndFilteredList}
-				addProduct={props.addProduct}
-			/>
 		</main>
 	);
 }

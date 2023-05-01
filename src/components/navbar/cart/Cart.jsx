@@ -1,9 +1,19 @@
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './CartAnimation.module.css';
 import Item from './item/Item';
-import styles from '/src/styles/navbar/cart/Cart.module.css';
 
 export default function Cart(props) {
+	const cartRef = useRef();
 	const navigate = useNavigate();
+	useEffect(() => {
+		let handleClick = (e) => {
+			if (!cartRef.current.contains(e.target))
+				cartRef.current.classList.add(styles.slideOut);
+		};
+		document.addEventListener('mousedown', handleClick);
+		return () => document.removeEventListener('mousedown', handleClick);
+	});
 	function handleCheckOut() {
 		if (Object.entries(props.cartItems).length)
 			navigate('/Complete', { state: props.cartItems });
@@ -11,31 +21,36 @@ export default function Cart(props) {
 	return (
 		<div
 			data-testid='cart-container'
-			className={styles.Cart}
+			className={
+				'fixed left-0 right-0 top-0 z-50 flex h-screen flex-col gap-4 bg-white px-4 pb-4 text-very-dark-blue shadow-2xl md:left-2/4 xl:left-3/4' +
+				' ' +
+				styles.Cart
+			}
 			onAnimationEnd={(e) => {
 				if (e.animationName.includes('slideOut')) {
 					e.target.classList.remove(styles.slideOut);
 					props.onClose();
 				}
 			}}
+			ref={cartRef}
 		>
-			<div className={styles.head}>
+			<div className='flex flex-wrap items-center justify-between border-b-2 border-very-dark-blue py-3'>
 				<button
 					onClick={(e) => {
 						e.target.parentNode.parentNode.classList.add(
 							styles.slideOut
 						);
 					}}
-					className={styles.closeBtn}
+					className='text-5xl'
 					data-testid='close-btn'
 				>
 					☰
 				</button>
-				<span className={styles.cartTitle}>Your Cart</span>
+				<span className='text-5xl font-normal italic'>Your Cart</span>
 			</div>
 			<div
-				className={styles.itemList}
 				data-testid='cart-itemList'
+				className='grid grid-flow-row auto-rows-auto overflow-auto'
 			>
 				{Object.entries(props.cartItems).length === 0
 					? 'Your cart is empty.'
@@ -67,7 +82,7 @@ export default function Cart(props) {
 									props.setCartItems((prev) => {
 										return {
 											...prev,
-											[k]: [v[0], Math.min(v[1]--, 1)],
+											[k]: [v[0], Math.max(v[1]--, 1)],
 										};
 									});
 								}}
@@ -75,8 +90,11 @@ export default function Cart(props) {
 					  ))}
 			</div>
 			<button
-				className={styles.checkOutBtn}
-				onClick={handleCheckOut}
+				className='mt-auto border-2 border-dark-blue py-4 font-normal hover:bg-dark-blue hover:text-white'
+				onClick={() => {
+					handleCheckOut();
+					cartRef.current.classList.add(styles.slideOut);
+				}}
 			>
 				Checkout
 			</button>

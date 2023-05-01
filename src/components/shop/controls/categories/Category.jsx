@@ -1,5 +1,3 @@
-import styles from '../../../../styles/shop/controls/categories/Category.module.css';
-
 export default function Category(props) {
 	function handleChange(e) {
 		if (e.target.checked) {
@@ -17,18 +15,18 @@ export default function Category(props) {
 		}
 	}
 	return (
-		<li className={styles.Category}>
-			<input
-				className={styles.category}
-				type='checkbox'
-				id={props.name}
-				onChange={handleChange}
-				checked={props.isChecked}
-			/>
+		<li className={'px-2' + ' ' + (props.isChecked ? '' : 'opacity-60')}>
 			<label
 				htmlFor={props.name}
-				className={styles.categoryLabel}
+				className='flex cursor-pointer items-center gap-2'
 			>
+				<input
+					className='cursor-pointer focus:ring-2'
+					type='checkbox'
+					id={props.name}
+					onChange={handleChange}
+					checked={props.isChecked}
+				/>
 				{props.name}
 			</label>
 		</li>
