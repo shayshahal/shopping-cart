@@ -6,6 +6,7 @@ export default function Home() {
 			className={
 				'bg-start grid content-center justify-items-center gap-8 bg-home-mobile bg-cover bg-bottom bg-no-repeat text-center lg:bg-home'
 			}
+			data-testid='home'
 		>
 			<h1 className='text-5xl font-thin italic md:text-7xl xl:text-9xl animate-slideIn'>
 				Shopping Cart

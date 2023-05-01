@@ -65,7 +65,10 @@ export default function Shop(props) {
 	}
 
 	return (
-		<main className='flex flex-1 flex-col md:flex-row md:overflow-hidden'>
+		<main
+			className='flex flex-1 flex-col md:flex-row md:overflow-hidden'
+			data-testid='shop'
+		>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
@@ -99,7 +102,7 @@ export default function Shop(props) {
 					);
 				})}
 			</form>
-			<div className='flex-1 flex flex-col'>
+			<div className='flex flex-1 flex-col'>
 				<Search />
 				<ProductList
 					sortedAndFilteredList={sortedAndFilteredList}
