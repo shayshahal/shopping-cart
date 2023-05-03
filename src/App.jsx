@@ -1,75 +1,76 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+	Route,
+	RouterProvider,
+	createBrowserRouter,
+	createRoutesFromElements,
+} from 'react-router-dom';
 import Complete from './components/Complete.jsx';
 import Home from './components/Home.jsx';
 import PageLayout from './components/PageLayout.jsx';
 import Details from './components/details/Details.jsx';
-import Nav from './components/navbar/Nav.jsx';
 import Shop from './components/shop/Shop.jsx';
 // Do lazy loading
 
+async function loadFakeProducts() {
+	const productsResponse = await fetch(
+		'https://dummyjson.com/products?limit=100&skip=0'
+	);
+	const productsData = await productsResponse.json();
+	const categoriesResponse = await fetch(
+		'https://dummyjson.com/products/categories'
+	);
+	const categoriesData = await categoriesResponse.json();
+	const products = productsData.products;
+	const categories = categoriesData;
+	return { products, categories };
+}
+
 export default function App() {
 	const [cartItems, setCartItems] = useState({});
-	const [productsList, setProductsList] = useState([]);
 	function addItemToCart(item) {
 		setCartItems((prev) => [...prev, item]);
 	}
-	useEffect(() => {
-		const controller = new AbortController();
-		async function fetchProducts() {
-			let response = await fetch(
-				'https://dummyjson.com/products?limit=100&skip=0',
-				{ signal: controller.signal }
-			);
-			let data = await response.json();
-			setProductsList(data.products);
-		}
-		fetchProducts().catch(() => console.log('canceled fetch!'));
-		return () => {
-			controller.abort();
-		};
-	}, []);
-
 	function addItemToCart(item) {
 		setCartItems((prev) => {
 			return item.id in prev ? prev : { ...prev, [item.id]: [item, 1] };
 		});
 	}
 
-	return (
-		<BrowserRouter>
-			<Routes>
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route
+				element={
+					<PageLayout
+						cartItems={cartItems}
+						setCartItems={setCartItems}
+					/>
+				}
+			>
 				<Route
+					path='/'
+					element={<Home />}
+				/>
+				<Route
+					path='/Shop'
 					element={
-						<PageLayout
-							cartItems={cartItems}
-							setCartItems={setCartItems}
+						<Shop
+							addProduct={addItemToCart}
 						/>
 					}
-				>
-					<Route
-						path='/'
-						element={<Home />}
-					/>
-					<Route
-						path='/Shop'
-						element={
-							<Shop
-								productList={productsList}
-								addProduct={addItemToCart}
-							/>
-						}
-					/>
-					<Route
-						path='/Shop/:title'
-						element={<Details onAdd={addItemToCart} />}
-					/>
-					<Route
-						path='/Complete'
-						element={<Complete />}
-					/>
-				</Route>
-			</Routes>
-		</BrowserRouter>
+					loader={loadFakeProducts}
+				/>
+				<Route
+					path='/Shop/:title'
+					element={<Details onAdd={addItemToCart} />}
+				/>
+				<Route
+					path='/Complete'
+					element={<Complete />}
+				/>
+			</Route>
+		)
 	);
+
+	return <RouterProvider router={router} />;
 }
