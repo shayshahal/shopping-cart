@@ -103,7 +103,7 @@ export default function Shop(props) {
 				})}
 			</form>
 			<div className='flex flex-1 flex-col'>
-				<Search />
+				<Search setSearchParams={setSearchParams} />
 				<ProductList
 					sortedAndFilteredList={sortedAndFilteredList}
 					addProduct={props.addProduct}

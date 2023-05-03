@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Complete from './components/Complete.jsx';
 import Home from './components/Home.jsx';
+import PageLayout from './components/PageLayout.jsx';
 import Details from './components/details/Details.jsx';
 import Nav from './components/navbar/Nav.jsx';
 import Shop from './components/shop/Shop.jsx';
@@ -36,33 +37,38 @@ export default function App() {
 	}
 
 	return (
-		<BrowserRouter init>
-			<Nav
-				cartItems={cartItems}
-				setCartItems={setCartItems}
-			/>
+		<BrowserRouter>
 			<Routes>
 				<Route
-					path='/'
-					element={<Home />}
-				/>
-				<Route
-					path='/Shop'
 					element={
-						<Shop
-							productList={productsList}
-							addProduct={addItemToCart}
+						<PageLayout
+							cartItems={cartItems}
+							setCartItems={setCartItems}
 						/>
 					}
-				/>
-				<Route
-					path='/Shop/:title'
-					element={<Details onAdd={addItemToCart} />}
-				/>
-				<Route
-					path='/Complete'
-					element={<Complete />}
-				/>
+				>
+					<Route
+						path='/'
+						element={<Home />}
+					/>
+					<Route
+						path='/Shop'
+						element={
+							<Shop
+								productList={productsList}
+								addProduct={addItemToCart}
+							/>
+						}
+					/>
+					<Route
+						path='/Shop/:title'
+						element={<Details onAdd={addItemToCart} />}
+					/>
+					<Route
+						path='/Complete'
+						element={<Complete />}
+					/>
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);

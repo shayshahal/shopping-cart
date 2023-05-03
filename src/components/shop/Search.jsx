@@ -1,10 +1,8 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-export default function Search() {
-	const [searchParams, setSearchParams] = useSearchParams();
-	const navigate = useNavigate();
+export default function Search(props) {
 	function handleSearch(e) {
-		setSearchParams({ q: e.target.value }, { replace: true });
+		props.setSearchParams({ q: e.target.value }, { replace: true });
 	}
 	return (
 		<label
