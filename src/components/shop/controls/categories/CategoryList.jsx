@@ -1,7 +1,22 @@
 import CircumIcon from '@klarr-agency/circum-icons-react';
+import { useEffect, useState } from 'react';
 import Category from './Category';
 
 export default function CategoryList(props) {
+	const [categoryList, setCategoryList] = useState([]);
+	useEffect(() => {
+		async function fetchCategories() {
+			let response = await fetch(
+				'https://dummyjson.com/products/categories'
+			);
+			let data = await response.json();
+			return data;
+		}
+		fetchCategories().then((data) => {
+			setCategoryList(data);
+		});
+	}, []);
+
 	function handleClick() {
 		props.onCategoryClick(new Set());
 	}
@@ -18,7 +33,7 @@ export default function CategoryList(props) {
 					color='#12264a'
 				/>
 			</button>
-			{props.categories.map((category, i) => (
+			{categoryList.map((category, i) => (
 				<Category
 					key={i}
 					name={category}

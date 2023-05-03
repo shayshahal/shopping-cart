@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoaderData, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import ProductList from './ProductList';
 import Search from './Search';
 import Filter from './controls/Filter.jsx';
@@ -7,13 +7,12 @@ import Layout from './controls/Layout';
 import CategoryList from './controls/categories/CategoryList';
 import SortList from './controls/sorts/SortList';
 export default function Shop(props) {
-	const { products, categories } = useLoaderData();
-	console.log(categories)
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isDescending, setIsDescending] = useState(true);
 	const [activeSort, setActiveSort] = useState('dollar');
 	const [activeCategories, setActiveCategories] = useState(new Set());
 	const [productLayout, setProductLayout] = useState('Cards'); // Card / Blocks
+
 	const [filters, setFilters] = useState({
 		price: { min: 0, max: 100000 },
 		rating: { min: 0, max: 5 },
@@ -43,7 +42,7 @@ export default function Shop(props) {
 		},
 	};
 
-	const sortedAndFilteredList = products
+	const sortedAndFilteredList = props.productList
 		.sort((a, b) => sortFunctions[activeSort](a, b))
 		.filter((product) => filterProduct(product));
 
@@ -90,7 +89,6 @@ export default function Shop(props) {
 				<CategoryList
 					onCategoryClick={setActiveCategories}
 					activeCategories={activeCategories}
-					categories={categories}
 				/>
 				{Object.entries(filters).map(([key, value]) => {
 					return (
