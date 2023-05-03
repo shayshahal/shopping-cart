@@ -9,5 +9,6 @@ export default defineConfig({
 		open: true,
 		port: 3000,
 	},
+	base: '/shopping-cart/',
 	plugins: [react()]
 });
