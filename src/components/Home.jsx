@@ -8,17 +8,17 @@ export default function Home() {
 			}
 			data-testid='home'
 		>
-			<h1 className='text-5xl font-thin italic md:text-7xl xl:text-9xl animate-slideIn'>
+			<h1 className='animate-slideIn text-5xl font-thin italic md:text-7xl xl:text-9xl'>
 				Shopping Cart
 			</h1>
 			<span
-				className='text-2xl font-thin italic md:text-4xl xl:text-5xl animate-fadeIn'
+				className='animate-fadeIn text-2xl font-thin italic md:text-4xl xl:text-5xl'
 				data-testid='paragraph'
 			>
 				A project by Shay Shahal, following The Odin Project curriculum.
 			</span>
 			<Link
-				className='mt-8 self-center justify-self-center border-2 animate-fadeIn border-dark-blue px-6 py-3 text-dark-blue shadow-md hover:rounded hover:bg-dark-blue hover:text-white'
+				className='mt-8 animate-fadeIn self-center justify-self-center border-2 border-dark-blue px-6 py-3 text-dark-blue shadow-md hover:rounded hover:bg-dark-blue hover:text-white'
 				to='/Shop'
 			>
 				Go to Shop →
@@ -40,7 +40,7 @@ export default function Home() {
 				</a>
 				<a className='cursor-pointer transition-transform hover:scale-110'>
 					<img
-						src='/assets/github-mark-white.svg'
+						src='assets/github-mark-white.svg'
 						className='h-full py-1'
 						alt='github link'
 					/>

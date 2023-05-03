@@ -26,7 +26,7 @@ export default function Details(props) {
 					<img
 						className='inline-block h-4'
 						alt='star'
-						src='/assets/star.svg'
+						src='assets/star.svg'
 						loading='lazy'
 					/>{' '}
 					{location.state.rating}
