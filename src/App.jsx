@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import Complete from './components/Complete.jsx';
 import Home from './components/Home.jsx';
 import PageLayout from './components/PageLayout.jsx';
@@ -37,7 +37,7 @@ export default function App() {
 	}
 
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<Routes>
 				<Route
 					element={
@@ -70,6 +70,6 @@ export default function App() {
 					/>
 				</Route>
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
