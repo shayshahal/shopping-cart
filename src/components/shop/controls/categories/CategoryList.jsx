@@ -19,7 +19,7 @@ export default function CategoryList(props) {
 		});
 	}, []);
 
-	function handleClick() {
+	function handleResetClick() {
 		props.onCategoryClick(new Set());
 	}
 
@@ -27,7 +27,7 @@ export default function CategoryList(props) {
 		<ul className='relative col-span-2 grid flex-1 grid-cols-3 items-center gap-4 border-y-2 border-dark-blue border-opacity-10 p-2 md:grid-cols-2 md:gap-0 '>
 			<button
 				className='absolute bottom-0.5 right-0 transition-transform hover:rotate-180'
-				onClick={handleClick}
+				onClick={handleResetClick}
 				name='reset'
 			>
 				<CircumIcon
