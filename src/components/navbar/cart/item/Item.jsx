@@ -1,6 +1,33 @@
 import Control from './Control';
 
 export default function Item(props) {
+	const onDelete = () => {
+		props.setCartItems((prev) => {
+			const { [props.item.id]: arr, ...cart } = prev;
+			return cart;
+		});
+	};
+	const onChange = (e) => {
+		props.setCartItems((prev) => {
+			return {
+				...prev,
+				[props.item.id]: [props.item, e.target.value],
+			};
+		});
+	};
+	const onIncrement = () => {
+		props.setCartItems((prev) => {
+			return { ...prev, [props.item.id]: [props.item, props.amount + 1] };
+		});
+	};
+	const onDecrement = () => {
+		props.setCartItems((prev) => {
+			return {
+				...prev,
+				[props.item.id]: [props.item, Math.max(props.amount - 1, 1)],
+			};
+		});
+	};
 	return (
 		<div
 			className='grid grid-cols-2 grid-rows-item gap-x-4 border-b-2 border-dark-blue p-2'
@@ -17,10 +44,10 @@ export default function Item(props) {
 			</p>
 			<Control
 				amount={props.amount}
-				onChange={props.onChange}
-				onIncrement={props.onIncrement}
-				onDecrement={props.onDecrement}
-				onDelete={props.onDelete}
+				onChange={onChange}
+				onIncrement={onIncrement}
+				onDecrement={onDecrement}
+				onDelete={onDelete}
 			/>
 		</div>
 	);

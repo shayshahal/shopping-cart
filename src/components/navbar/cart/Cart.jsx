@@ -62,33 +62,7 @@ export default function Cart(props) {
 								key={k}
 								item={v[0]}
 								amount={v[1]}
-								onDelete={() => {
-									props.setCartItems((prev) => {
-										const { [k]: arr, ...cart } = prev;
-										return cart;
-									});
-								}}
-								onChange={(e) => {
-									props.setCartItems((prev) => {
-										return {
-											...prev,
-											[k]: [v[0], e.target.value],
-										};
-									});
-								}}
-								onIncrement={() => {
-									props.setCartItems((prev) => {
-										return { ...prev, [k]: [v[0], v[1]++] };
-									});
-								}}
-								onDecrement={() => {
-									props.setCartItems((prev) => {
-										return {
-											...prev,
-											[k]: [v[0], Math.max(v[1]--, 1)],
-										};
-									});
-								}}
+								setCartItems={props.setCartItems}
 							/>
 					  ))}
 			</div>
