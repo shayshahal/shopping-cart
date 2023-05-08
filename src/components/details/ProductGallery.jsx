@@ -10,7 +10,7 @@ export default function ProductGallery(props) {
 				src={bigImage}
 				className=' h-1/2 shadow-2xl'
 			/>
-			<div className='flex items-stretch gap-4 flex-wrap justify-between'>
+			<div className='flex flex-wrap items-stretch justify-between gap-4'>
 				{props.images.map((image, index) => (
 					<button
 						key={index}
@@ -19,7 +19,7 @@ export default function ProductGallery(props) {
 						}}
 					>
 						<img
-							className='object-cover shadow-xl h-20'
+							className='h-20 object-cover shadow-xl'
 							alt='image button'
 							src={image}
 						/>

@@ -9,7 +9,7 @@ export default function Sort(props) {
 			htmlFor={props.name}
 			className={
 				'flex cursor-pointer rounded-full border-2 border-dark-blue transition-transform focus-within:scale-110 hover:scale-110 ' +
-				(props.isChecked ? ' bg-dark-blue' : '')	
+				(props.isChecked ? ' bg-dark-blue' : '')
 			}
 		>
 			<input
