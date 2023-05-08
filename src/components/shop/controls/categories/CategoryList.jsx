@@ -4,6 +4,8 @@ import Category from './Category';
 
 export default function CategoryList(props) {
 	const [categoryList, setCategoryList] = useState([]);
+
+	// Fetch the categories from the product mock API
 	useEffect(() => {
 		async function fetchCategories() {
 			let response = await fetch(
