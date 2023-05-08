@@ -31,10 +31,9 @@ export default function Complete() {
 				<h2 className='pt-4 text-end text-2xl font-thin md:text-3xl'>
 					Total cost:{' '}
 					<span className='font-normal text-dark-blue'>
-						{Object.values(location.state).reduce(
-							(sum, v) => sum + v[0].price,
-							0
-						)}{' '}
+						{Object.values(location.state)
+							.reduce((sum, v) => sum + v[0].price * v[1], 0)
+							.toLocaleString('en-US')}{' '}
 						$
 					</span>
 				</h2>
