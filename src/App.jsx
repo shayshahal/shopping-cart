@@ -11,9 +11,8 @@ import Shop from './components/shop/Shop.jsx';
 export default function App() {
 	const [cartItems, setCartItems] = useState({});
 	const [productsList, setProductsList] = useState([]);
-	function addItemToCart(item) {
-		setCartItems((prev) => [...prev, item]);
-	}
+
+	// fetch products from the product mocks API
 	useEffect(() => {
 		const controller = new AbortController();
 		async function fetchProducts() {
@@ -37,6 +36,7 @@ export default function App() {
 	}
 
 	return (
+		// Using HashRouter for Github Pages
 		<HashRouter>
 			<Routes>
 				<Route
