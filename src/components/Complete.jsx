@@ -8,22 +8,22 @@ export default function Complete() {
 			<h1 className='py-8 text-center text-5xl font-thin italic md:text-7xl'>
 				Thank you for purchasing in our site!
 			</h1>
-			<div className='overflow-auto p-4 mx-auto lg:w-1/2'>
+			<div className='mx-auto overflow-auto p-4 lg:w-1/2'>
 				{Object.entries(location.state).map(([k, v]) => (
 					<div
 						key={k}
-						className='flex items-center gap-2 h-24 border-b-2 border-dark-blue border-opacity-20'
+						className='flex h-24 items-center gap-2 border-b-2 border-dark-blue border-opacity-20'
 					>
-						<div className=''>
-							x{v[1]}
-						</div>
+						<div className=''>x{v[1]}</div>
 						<img
 							alt={v[0].title}
 							src={v[0].thumbnail}
 							className='h-3/4 w-48 object-contain'
 						/>
-						<h3 className='pt-2 text-3xl italic font-thin'>{v[0].title}</h3>
-						<div className='text-4xl ms-auto '>
+						<h3 className='pt-2 text-3xl font-thin italic'>
+							{v[0].title}
+						</h3>
+						<div className='ms-auto text-4xl '>
 							{v[0].price.toLocaleString('en-US')}$
 						</div>
 					</div>
