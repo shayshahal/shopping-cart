@@ -86,7 +86,7 @@ export default function Shop(props) {
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
-				className='grid grid-cols-2 gap-y-4 border-b-4 border-very-dark-blue border-opacity-10 px-2 py-4 md:flex md:w-1/3 md:flex-col md:border-b-0 md:border-r-2 lg:w-1/4 xl:w-1/5'
+				className='flex flex-col gap-y-4 border-b-4 border-very-dark-blue border-opacity-10 px-2 py-4 md:w-1/3 md:border-b-0 md:border-r-2 lg:w-1/4 xl:w-1/5'
 			>
 				<Layout
 					layout={productLayout}
