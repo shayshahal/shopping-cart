@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Complete from './components/Complete.jsx';
 import Home from './components/Home.jsx';
 import PageLayout from './components/PageLayout.jsx';
 import Details from './components/details/Details.jsx';
-import Nav from './components/navbar/Nav.jsx';
 import Shop from './components/shop/Shop.jsx';
-// Do lazy loading
 
 export default function App() {
 	const [cartItems, setCartItems] = useState({});
