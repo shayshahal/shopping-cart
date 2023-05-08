@@ -19,6 +19,7 @@ export default function Shop(props) {
 	});
 
 	const sortFunctions = {
+		// Price sorting function
 		dollar: (a, b) => {
 			if (isDescending) {
 				return b.price - a.price;
@@ -26,6 +27,7 @@ export default function Shop(props) {
 				return a.price - b.price;
 			}
 		},
+		// Alphabetical sorting function
 		text: (a, b) => {
 			if (isDescending) {
 				return a.title.localeCompare(b.title);
@@ -33,6 +35,7 @@ export default function Shop(props) {
 				return b.title.localeCompare(a.title);
 			}
 		},
+		// Rating sorting function
 		star: (a, b) => {
 			if (isDescending) {
 				return b.rating - a.rating;
@@ -42,14 +45,20 @@ export default function Shop(props) {
 		},
 	};
 
+	// The sorted and filtered list based on the user's inputs.
+	// Note that this variable is not a state variable because it is already dependent on other state variables
+	// in the component
 	const sortedAndFilteredList = props.productList
 		.sort((a, b) => sortFunctions[activeSort](a, b))
 		.filter((product) => filterProduct(product));
 
 	function filterProduct(product) {
+		// Checking if:
 		if (
+			// 1. product has any of the active categories
 			(!activeCategories.has(product.category) &&
 				activeCategories.size !== 0) ||
+			// 2. product has a name that includes the user's search input
 			!product.title
 				.toLowerCase()
 				.includes(
@@ -59,8 +68,12 @@ export default function Shop(props) {
 				)
 		)
 			return false;
+
+		// 3. product is in range of filters
 		for (const [k, v] of Object.entries(filters))
 			if (product[k] < v.min || product[k] > v.max) return false;
+
+		// If reached here, product passed the filter
 		return true;
 	}
 
