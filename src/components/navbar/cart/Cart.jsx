@@ -6,6 +6,8 @@ import Item from './item/Item';
 export default function Cart(props) {
 	const cartRef = useRef();
 	const navigate = useNavigate();
+
+	// Check for click outside of cart
 	useEffect(() => {
 		let handleClick = (e) => {
 			if (!cartRef.current.contains(e.target))
@@ -14,6 +16,7 @@ export default function Cart(props) {
 		document.addEventListener('mousedown', handleClick);
 		return () => document.removeEventListener('mousedown', handleClick);
 	});
+
 	function handleCheckOut() {
 		if (Object.entries(props.cartItems).length)
 			navigate('/Complete', { state: props.cartItems });
