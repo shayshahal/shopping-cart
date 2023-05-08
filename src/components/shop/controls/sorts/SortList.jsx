@@ -11,7 +11,7 @@ export default function SortList(props) {
 				onChange={props.onDirectionChange}
 				isDescending={props.isDescending}
 			/>
-			{Object.entries(props.sortFunctions).map(([key, value]) => {
+			{Object.keys(props.sortFunctions).map((key) => {
 				return (
 					<Sort
 						key={key}
