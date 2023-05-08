@@ -10,6 +10,8 @@ export default function Complete() {
 			</h1>
 			<div className='mx-auto overflow-auto p-4 lg:w-1/2'>
 				{Object.entries(location.state).map(([k, v]) => (
+					// v[0] - item
+					// v[1] - amount
 					<div
 						key={k}
 						className='flex h-24 items-center gap-2 border-b-2 border-dark-blue border-opacity-20'
